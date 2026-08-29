@@ -44,13 +44,13 @@ export function OfferSection() {
               </h3>
               <div className="mb-3 rounded-xl bg-primary p-3">
                 <div className="mb-1 flex items-center justify-center gap-2">
-                  <span className="text-lg line-through opacity-80">R$&nbsp;87,00</span>
+                  <span className="text-lg line-through opacity-80">$87.00</span>
                   <span className="rounded-full bg-white/20 px-2 py-0.5 text-xs font-bold">
                     93% OFF
                   </span>
                 </div>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold md:text-6xl">R$&nbsp;7,90</span>
+                  <span className="text-5xl font-bold md:text-6xl">$7.90</span>
                 </div>
                 <p className="mt-1 text-base font-bold md:text-lg">Pagamento único</p>
               </div>

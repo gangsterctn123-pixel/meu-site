@@ -63,9 +63,9 @@ export function Hero() {
           <div className="mb-6 rounded-lg bg-primary p-6 text-white">
             <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2">
               <span>De:</span>
-              <span className="ml-2 text-2xl font-bold line-through">R$&nbsp;87,00</span>
+              <span className="ml-2 text-2xl font-bold line-through">$87.00</span>
               <span className="ml-4">Por apenas:</span>
-              <span className="ml-2 text-4xl font-bold">R$&nbsp;7,90</span>
+              <span className="ml-2 text-4xl font-bold">$7.90</span>
               <span className="ml-4 animate-pulse rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-white">
                 93% OFF
               </span>
