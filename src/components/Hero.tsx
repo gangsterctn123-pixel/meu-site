@@ -65,7 +65,7 @@ export function Hero() {
               <span>De:</span>
               <span className="ml-2 text-2xl font-bold line-through">R$&nbsp;87,00</span>
               <span className="ml-4">Por apenas:</span>
-              <span className="ml-2 text-4xl font-bold">R$&nbsp;5,90</span>
+              <span className="ml-2 text-4xl font-bold">R$&nbsp;7,90</span>
               <span className="ml-4 animate-pulse rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-white">
                 93% OFF
               </span>

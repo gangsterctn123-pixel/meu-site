@@ -50,7 +50,7 @@ export function OfferSection() {
                   </span>
                 </div>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold md:text-6xl">R$&nbsp;5,90</span>
+                  <span className="text-5xl font-bold md:text-6xl">R$&nbsp;7,90</span>
                 </div>
                 <p className="mt-1 text-base font-bold md:text-lg">Pagamento único</p>
               </div>
