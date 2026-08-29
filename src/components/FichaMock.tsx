@@ -6,6 +6,24 @@ interface FichaMockProps {
   className?: string;
 }
 
+function PosePlaceholder({ variant }: { variant: "start" | "end" }) {
+  return (
+    <div className="flex aspect-square w-full items-center justify-center rounded bg-surface">
+      {variant === "start" ? (
+        <svg viewBox="0 0 24 24" className="h-3/5 w-3/5 text-primary/35" fill="currentColor">
+          <circle cx="12" cy="4.6" r="2.2" />
+          <path d="M12 7.4c-1.9 0-3.4 1.1-4 2.9l-1.6 4.6 1.9.7 1.7-3.9-.5 3.3-1.6 6.2 2 .5 1.7-6 1.2 6h2.1l-.6-7.1 1.8 3.7 1.9-.9-2.2-4.5c-.7-1.5-2.1-2.5-3.8-2.5z" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" className="h-3/5 w-3/5 -scale-x-100 text-primary/35" fill="currentColor">
+          <circle cx="9.5" cy="6.2" r="2.1" />
+          <path d="M9.4 8.3c-1.3.3-2.3 1.2-2.7 2.5l-1.1 3.7 1.8.6 1-3.1 1.1 1.6-2.6 3.9 1.6 1.2 3-4 2.4 2.9 1.5-1.3-2.9-4 .6-3.6c1.1.1 2.1.7 2.7 1.7l1.6 2.7 1.7-1-1.9-3.3c-1-1.7-2.9-2.6-4.8-2.5z" />
+        </svg>
+      )}
+    </div>
+  );
+}
+
 export function FichaMock({ number, className = "" }: FichaMockProps) {
   const f = fichaLibrary[number];
   if (!f) return null;
@@ -52,11 +70,9 @@ export function FichaMock({ number, className = "" }: FichaMockProps) {
               ))}
             </div>
           </div>
-          <div className="flex aspect-square w-[30%] shrink-0 items-center justify-center rounded bg-surface">
-            <svg viewBox="0 0 24 24" className="h-3/5 w-3/5 text-primary/35" fill="currentColor">
-              <circle cx="12" cy="5" r="2.4" />
-              <path d="M12 8c-2.4 0-4.3 1.6-4.8 3.8L6 16h2.2l1-4 1 8h2l.6-6 .6 6h2l1-8 1 4H20l-1.2-4.2C18.3 9.6 16.4 8 14 8h-2z" />
-            </svg>
+          <div className="flex w-[30%] shrink-0 flex-col gap-[1.5px]">
+            <PosePlaceholder variant="start" />
+            <PosePlaceholder variant="end" />
           </div>
         </div>
 
