@@ -6,8 +6,8 @@ function HeroMosaic() {
   return (
     <div className="relative">
       <div className="grid w-full max-w-[420px] grid-cols-4 gap-2 rounded-lg bg-white p-3 shadow-lg sm:max-w-[520px]">
-        {heroFichas.map((f) => (
-          <FichaMock key={f.number} {...f} />
+        {heroFichas.map((number) => (
+          <FichaMock key={number} number={number} />
         ))}
       </div>
       <div className="absolute -top-4 -right-4 animate-bounce-slow rounded-full bg-primary px-4 py-2 font-bold text-white shadow-lg">

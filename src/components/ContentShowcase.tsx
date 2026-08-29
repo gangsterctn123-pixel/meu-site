@@ -28,8 +28,8 @@ export function ContentShowcase() {
               className="overflow-hidden rounded-2xl border-2 border-primary/60 bg-surface shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
               <div className="grid grid-cols-2 gap-1.5 bg-primary/10 p-2.5">
-                {card.fichas.map((f) => (
-                  <FichaMock key={f.number} {...f} />
+                {card.fichas.map((number) => (
+                  <FichaMock key={number} number={number} />
                 ))}
               </div>
               <div className="p-4 text-center">
