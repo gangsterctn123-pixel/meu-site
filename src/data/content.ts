@@ -110,9 +110,36 @@ export const reviews: Review[] = [
   },
 ];
 
-export const galleryCategories = [
-  { label: "Cardápio", icon: "menu" as const },
-  { label: "Gastronomia", icon: "food" as const },
-  { label: "Ambiente", icon: "place" as const },
-  { label: "Do proprietário", icon: "owner" as const },
+export interface GalleryPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: "/gallery/prato-completo.jpg",
+    alt: "Prato do Matuto's Grill com carne na chapa, aipim com alho e coalho grelhado, servido com café",
+    caption: "Prato da casa",
+  },
+  {
+    src: "/gallery/sanduiche-grego.jpg",
+    alt: "Sanduíche de churrasco grego do Matuto's Grill",
+    caption: "Churrasco grego",
+  },
+  {
+    src: "/gallery/sanduiche-bacon.jpg",
+    alt: "Sanduíche com queijo cheddar e bacon do Matuto's Grill",
+    caption: "Cheddar e bacon",
+  },
+  {
+    src: "/gallery/sanduiche-cliente-1.jpg",
+    alt: "Sanduíche especial do Matuto's Grill servido com chope, fotografado por um cliente",
+    caption: "Direto da mesa",
+  },
+  {
+    src: "/gallery/sanduiche-cliente-2.jpg",
+    alt: "Sanduíche recheado do Matuto's Grill com molho especial e cebolinha, fotografado por um cliente",
+    caption: "Molho especial",
+  },
 ];

@@ -45,6 +45,5 @@ src/
 Todos os textos (avaliações, destaques do cardápio, endereço, telefone, horário e opções
 de atendimento) foram extraídos da ficha pública do Matuto's Grill no Google Maps. O mapa
 da seção "Localização" usa o embed público do Google Maps a partir do endereço do
-restaurante — não requer chave de API. As fotos reais do local não estavam disponíveis
-para este projeto; a seção "Fotos e vídeos" usa cartões ilustrativos por categoria em vez
-de fotografias.
+restaurante — não requer chave de API. A seção "Fotos e vídeos" usa fotos reais do
+cardápio (recortadas a partir de capturas do Google Maps, em `public/gallery/`).

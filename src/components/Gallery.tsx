@@ -1,28 +1,5 @@
-import type { ComponentType } from "react";
-import {
-  BookOpenIcon,
-  CameraIcon,
-  FireIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/outline";
-import { galleryCategories } from "../data/content";
+import { galleryPhotos } from "../data/content";
 import { Reveal } from "./Reveal";
-
-type CategoryIcon = "menu" | "food" | "place" | "owner";
-
-const icons: Record<CategoryIcon, ComponentType<{ className?: string }>> = {
-  menu: BookOpenIcon,
-  food: FireIcon,
-  place: CameraIcon,
-  owner: UserGroupIcon,
-};
-
-const gradients: Record<CategoryIcon, string> = {
-  menu: "from-fire to-fire-dark",
-  food: "from-gold to-fire",
-  place: "from-ember to-charcoal-light",
-  owner: "from-fire-light to-ember",
-};
 
 export function Gallery() {
   return (
@@ -34,25 +11,32 @@ export function Gallery() {
             O clima do Matuto's
           </h2>
           <p className="mt-3 text-ink/70">
-            Enquanto reunimos o álbum completo de fotos do local, aqui vai um gostinho do que te
-            espera por lá.
+            Fotos reais do prato e dos sanduíches do Matuto's Grill, direto de quem já provou.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {galleryCategories.map((cat, i) => {
-            const Icon = icons[cat.icon];
-            return (
-              <Reveal key={cat.label} delay={i * 80}>
-                <div
-                  className={`flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-br p-6 text-center text-white shadow-card ${gradients[cat.icon]}`}
-                >
-                  <Icon className="h-9 w-9" />
-                  <span className="font-semibold">{cat.label}</span>
-                </div>
-              </Reveal>
-            );
-          })}
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {galleryPhotos.map((photo, i) => (
+            <Reveal
+              key={photo.src}
+              delay={i * 80}
+              className={`group relative overflow-hidden rounded-2xl shadow-card ${
+                i === 0 ? "col-span-2 sm:col-span-1 sm:row-span-2" : ""
+              }`}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                className={`w-full object-cover transition duration-500 group-hover:scale-105 ${
+                  i === 0 ? "aspect-[4/5] sm:h-full sm:aspect-auto" : "aspect-[4/5]"
+                }`}
+              />
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/80 via-charcoal/0 to-transparent p-4 pt-10">
+                <span className="text-sm font-semibold text-white">{photo.caption}</span>
+              </span>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
