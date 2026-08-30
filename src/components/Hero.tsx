@@ -5,8 +5,13 @@ import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
-    <section id="top" className="bg-ember-pattern bg-charcoal pt-16 pb-20 text-cream">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 px-4 text-center">
+    <section id="top" className="relative overflow-hidden bg-charcoal pt-16 pb-20 text-cream">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/gallery/ambiente-fachada.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/85 to-charcoal" />
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-6 px-4 text-center">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-light uppercase">
             {restaurant.category} · Caruaru - PE
