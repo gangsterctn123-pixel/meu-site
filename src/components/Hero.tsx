@@ -1,28 +1,6 @@
-import { CheckCircleIcon, ClockIcon, TagIcon, UsersIcon } from "@heroicons/react/20/solid";
-import { benefits, heroFichas } from "../data/content";
-import { FichaMock } from "./FichaMock";
-
-function HeroMosaic() {
-  return (
-    <div className="relative">
-      <div className="grid w-full max-w-[420px] grid-cols-4 gap-2 rounded-lg bg-white p-3 shadow-lg sm:max-w-[520px]">
-        {heroFichas.map((number) => (
-          <FichaMock key={number} number={number} />
-        ))}
-      </div>
-      <div className="absolute -top-4 -right-4 animate-bounce-slow rounded-full bg-primary px-4 py-2 font-bold text-white shadow-lg">
-        93% OFF
-      </div>
-      <div className="absolute -bottom-4 left-1/2 inline-flex -translate-x-1/2 flex-col items-center rounded-full bg-primary/90 px-4 py-2 text-center text-xs text-white shadow-lg">
-        <div className="flex items-center gap-2">
-          <ClockIcon className="h-4 w-4" />
-          <span>Somente Hoje!</span>
-        </div>
-        <span className="mt-1 whitespace-nowrap">25 exercícios ilustrados</span>
-      </div>
-    </div>
-  );
-}
+import { CheckCircleIcon, TagIcon, UsersIcon } from "@heroicons/react/20/solid";
+import { benefits } from "../data/content";
+import { HeroShowcase } from "./HeroShowcase";
 
 export function Hero() {
   return (
@@ -43,7 +21,7 @@ export function Hero() {
           </h2>
 
           <div className="my-8 flex items-center justify-center lg:hidden">
-            <HeroMosaic />
+            <HeroShowcase />
           </div>
 
           <div className="mb-6 flex items-center text-special">
@@ -79,7 +57,7 @@ export function Hero() {
         </div>
 
         <div className="hidden items-center justify-center lg:flex lg:w-1/2">
-          <HeroMosaic />
+          <HeroShowcase />
         </div>
       </div>
     </section>
