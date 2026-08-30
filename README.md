@@ -1,13 +1,14 @@
-# 25 Fichas de Exercícios para Glúteos com Elástico Mini Band
+# Matuto's Grill - Churrasco Grego
 
-Reprodução da landing page de vendas (`fichas-exercicios-elastico`), construída como um
-projeto React independente, pronto para produção.
+Site institucional de uma página para o Matuto's Grill (Caruaru - PE), construído como
+projeto React independente a partir das informações públicas da ficha do restaurante no
+Google Maps (avaliações, cardápio, endereço, horário e contato).
 
 ## Stack
 
 - [Vite](https://vite.dev) + [React 19](https://react.dev) + TypeScript
 - [Tailwind CSS v4](https://tailwindcss.com) (tema configurado em `src/index.css`)
-- [Heroicons](https://heroicons.com) (mesmos ícones usados na página original)
+- [Heroicons](https://heroicons.com)
 
 ## Como rodar
 
@@ -34,25 +35,15 @@ npm run preview
 
 ```
 src/
-  components/   # Uma seção da página por componente
-  data/         # Todo o conteúdo textual (copy, depoimentos, FAQ, bônus, preços)
+  components/   # Uma seção da página por componente (Hero, Cardápio, Avaliações, Mapa...)
+  data/         # Todo o conteúdo textual (dados do restaurante, cardápio, avaliações)
   hooks/        # useReveal — animação de entrada ao rolar a página
 ```
 
-Cada `<section>` alterna automaticamente entre fundo escuro e claro (via CSS
-`nth-of-type(odd/even)` em `src/index.css`), igual ao comportamento da página original.
+## Conteúdo
 
-## Sobre a fidelidade visual
-
-O layout, hierarquia, espaçamentos, tipografia, paleta de cores (rosa-magenta `#c2265f`,
-bordô `#23081a`/`#5a1030`, CTA verde `#30bf00`), ícones, textos, cards, sombras, bordas,
-animações (scroll reveal, "shaker" no botão de compra, pulse no selo de desconto), o
-acordeão de FAQ e a responsividade mobile/desktop foram reproduzidos com base em capturas
-de tela da página original.
-
-As imagens reais do produto (mosaico de fichas, fotos dos bônus e prints de depoimentos)
-não estavam disponíveis para este projeto, então essas áreas foram recriadas como
-componentes visuais (`FichaMock`, `BonusVisual`, cards de depoimento em HTML/CSS) que
-preservam a composição, proporção e paleta de cada seção. Para 100% de fidelidade
-fotográfica, substitua esses componentes pelas imagens reais em `src/components/` e
-`src/data/content.ts`.
+Todos os textos (avaliações, destaques do cardápio, endereço, telefone, horário e opções
+de atendimento) foram extraídos da ficha pública do Matuto's Grill no Google Maps. O mapa
+da seção "Localização" usa o embed público do Google Maps a partir do endereço do
+restaurante — não requer chave de API. A seção "Fotos e vídeos" usa fotos reais do
+cardápio (recortadas a partir de capturas do Google Maps, em `public/gallery/`).

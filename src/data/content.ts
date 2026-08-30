@@ -1,358 +1,145 @@
-export const benefits = [
-  "Posições inicial e final em cada exercício",
-  "Séries, repetições e descansos já indicados",
-  "8 iniciantes, 13 intermediárias e 4 avançadas",
-  "Cuidados de segurança em todas as fichas",
-];
-
-export interface FichaDetail {
-  number: number;
-  category: string;
-  name: string;
-  equipment: string;
-  objective: string;
-  muscles: string[];
-  steps: string[];
-  series: string;
-  reps: string;
-  rest: string;
-  warning: string;
-}
-
-export const fichaLibrary: Record<number, FichaDetail> = {
-  1: {
-    number: 1,
-    category: "EXTENSÃO DO QUADRIL",
-    name: "Ponte com Faixa",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Ensinar a extensão do quadril com estabilidade dos joelhos e da pelve.",
-    muscles: ["Glúteo máximo", "Glúteo médio"],
-    steps: [
-      "Deite com joelhos flexionados",
-      "Afaste os joelhos contra a faixa",
-      "Suba o quadril até alinhar",
-      "Contraia o glúteo no topo",
-      "Desça com controle",
-    ],
-    series: "2-3",
-    reps: "10-15",
-    rest: "40-60",
-    warning: "Evite arquear a lombar durante a subida.",
+export const restaurant = {
+  name: "Matuto's Grill",
+  tagline: "Churrasco Grego",
+  category: "Sanduicheria",
+  rating: 4.7,
+  reviewCount: 457,
+  priceRange: "R$ 20–40",
+  priceInformants: 48,
+  phoneDisplay: "(81) 99939-8745",
+  phoneHref: "+5581999398745",
+  whatsappHref: "5581999398745",
+  address: {
+    line1: "Praça Teotônio Viléla, 155",
+    line2: "Nossa Sra. das Dores, Caruaru - PE",
+    cep: "55004-055",
+    full: "Praça Teotônio Viléla, 155 - Nossa Sra. das Dores, Caruaru - PE, 55004-055",
   },
-  3: {
-    number: 3,
-    category: "ROTAÇÃO EXTERNA",
-    name: "Concha Lateral",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Fortalecer os rotadores externos e melhorar o controle lateral do quadril.",
-    muscles: ["Glúteo médio", "Glúteo máximo"],
-    steps: [
-      "Deite de lado, joelhos flexionados",
-      "Mantenha os pés unidos",
-      "Abra o joelho de cima",
-      "Segure um instante no topo",
-      "Retorne com controle",
-    ],
-    series: "2-3",
-    reps: "12-15",
-    rest: "40-60",
-    warning: "Não deixe o quadril rolar para trás.",
-  },
-  5: {
-    number: 5,
-    category: "EXTENSÃO DE QUADRIL",
-    name: "Pé Elevado",
-    equipment: "Apoio elevado antiderrapante",
-    objective: "Treinar a extensão de quadril unilateral com maior amplitude.",
-    muscles: ["Glúteo máximo", "Isquiotibiais"],
-    steps: [
-      "Apoie um pé na elevação",
-      "Incline levemente o tronco",
-      "Estenda o quadril para trás",
-      "Contraia o glúteo no topo",
-      "Retorne sem tocar o chão",
-    ],
-    series: "2-3",
-    reps: "10-12",
-    rest: "45-60",
-    warning: "Mantenha o apoio firme e antiderrapante.",
-  },
-  6: {
-    number: 6,
-    category: "ABDUÇÃO FUNCIONAL",
-    name: "Hidrante",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Ativar o glúteo médio em posição de quatro apoios.",
-    muscles: ["Glúteo médio", "Glúteo mínimo"],
-    steps: [
-      "Posicione-se em quatro apoios",
-      "Mantenha o joelho a 90°",
-      "Abra o joelho para o lado",
-      "Segure no ponto alto",
-      "Retorne com controle",
-    ],
-    series: "2-3",
-    reps: "12-15",
-    rest: "40-60",
-    warning: "Evite rotacionar o tronco durante o movimento.",
-  },
-  11: {
-    number: 11,
-    category: "FORÇA BILATERAL",
-    name: "Agachamento com Faixa",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Fortalecer os glúteos em um padrão funcional de agachamento.",
-    muscles: ["Glúteo máximo", "Glúteo médio"],
-    steps: [
-      "Pés na largura do quadril",
-      "Empurre os joelhos contra a faixa",
-      "Desça flexionando quadril e joelhos",
-      "Mantenha o peso nos calcanhares",
-      "Suba contraindo o glúteo",
-    ],
-    series: "3",
-    reps: "12-15",
-    rest: "45-60",
-    warning: "Não deixe os joelhos colapsarem para dentro.",
-  },
-  17: {
-    number: 17,
-    category: "FORÇA UNILATERAL",
-    name: "Subida no Degrau",
-    equipment: "Degrau ou banco firme",
-    objective: "Desenvolver força unilateral de glúteo e quadríceps.",
-    muscles: ["Glúteo máximo", "Quadríceps"],
-    steps: [
-      "Apoie um pé no degrau",
-      "Empurre o corpo para cima",
-      "Estenda o quadril no topo",
-      "Controle a descida",
-      "Alterne as pernas",
-    ],
-    series: "2-3",
-    reps: "8-12",
-    rest: "60-75",
-    warning: "Use um degrau estável e antiderrapante.",
-  },
-  19: {
-    number: 19,
-    category: "DOBRADIÇA DO QUADRIL",
-    name: "Terra Romeno",
-    equipment: "Faixa longa sob os dois pés",
-    objective: "Fortalecer glúteos e posteriores com joelhos pouco flexionados.",
-    muscles: ["Glúteo máximo", "Biceps femoral"],
-    steps: [
-      "Pés sobre a faixa longa",
-      "Incline o tronco à frente",
-      "Empurre o quadril para trás",
-      "Mantenha a coluna neutra",
-      "Retorne contraindo o glúteo",
-    ],
-    series: "3",
-    reps: "10-12",
-    rest: "60-75",
-    warning: "Não arredonde a lombar durante a descida.",
-  },
-  21: {
-    number: 21,
-    category: "VETOR HORIZONTAL",
-    name: "Puxada entre as Pernas",
-    equipment: "Faixa longa com ancoragem baixa",
-    objective: "Treinar a dobradiça de quadril contra resistência que puxa o quadril para trás.",
-    muscles: ["Glúteo máximo", "Biceps femoral"],
-    steps: [
-      "Ancore a faixa atrás do corpo",
-      "Segure a faixa entre as pernas",
-      "Incline o tronco à frente",
-      "Estenda o quadril à frente",
-      "Retorne com controle",
-    ],
-    series: "3",
-    reps: "10-12",
-    rest: "60-75",
-    warning: "Verifique a ancoragem antes de iniciar.",
-  },
-  23: {
-    number: 23,
-    category: "GLÚTEO E TRONCO",
-    name: "Prancha Lateral com Abdução",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Fortalecer os abdutores e a estabilidade lateral do tronco.",
-    muscles: ["Glúteo médio", "Glúteo mínimo"],
-    steps: [
-      "Apoie o antebraço no chão",
-      "Alinhe ombro, quadril e pés",
-      "Suba o quadril em prancha lateral",
-      "Abra o joelho de cima",
-      "Retorne com controle",
-    ],
-    series: "2-3",
-    reps: "10-12",
-    rest: "60-75",
-    warning: "Mantenha o quadril alinhado, sem cair.",
-  },
-  24: {
-    number: 24,
-    category: "ESTABILIDADE DO QUADRIL",
-    name: "Urso com Abdução",
-    equipment: "Mini band acima dos joelhos",
-    objective: "Desafiar a estabilidade do quadril em apoio quadrúpede elevado.",
-    muscles: ["Glúteo médio", "Core"],
-    steps: [
-      "Posição de quatro apoios",
-      "Eleve levemente os joelhos",
-      "Abra um joelho para o lado",
-      "Mantenha o quadril nivelado",
-      "Retorne com controle",
-    ],
-    series: "2-3",
-    reps: "10-12",
-    rest: "45-60",
-    warning: "Não deixe o quadril balançar para os lados.",
-  },
+  plusCode: "P28H+67 Nossa Sra. das Dores, Caruaru - PE",
+  closingTime: "23:30",
 };
 
-export const showcaseCards = [
-  {
-    title: "25 fichas ilustradas",
-    text: "Cada ficha mostra duas fases do movimento, objetivo e músculos trabalhados.",
-    fichas: [1, 3],
-  },
-  {
-    title: "Do iniciante ao avançado",
-    text: "**8 fichas iniciantes, 13 intermediárias e 4 avançadas** para escolher opções compatíveis com seu nível.",
-    fichas: [11, 19],
-  },
-  {
-    title: "Dose e segurança",
-    text: "Consulte séries, repetições ou tempo, descanso, dica e aviso específico de cada exercício.",
-    fichas: [21, 23],
-  },
-];
+export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+  restaurant.address.full
+)}&output=embed`;
 
-export const heroFichas = [1, 11, 24, 23, 5, 6, 17, 19];
+export const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+  restaurant.address.full
+)}`;
 
-export const bonuses = [
-  {
-    label: "Bônus #1",
-    title: "250 Receitas Low Carb",
-    text: "Preparado para você que está com dificuldades em montar cardápios para o seu dia a dia com foco em dietas Low Carb.",
-    tone: "#ffb703",
-  },
-  {
-    label: "Bônus #2",
-    title: "128 Receitas Anabólicas",
-    text: "Para você que deseja escolher um estilo de vida saudável com alimentação limpa, concentrada em alimentos integrais não refinados, em vez de alternativas pré-cozidas ou processadas.",
-    tone: "#fb8500",
-  },
-  {
-    label: "Bônus #3",
-    title: "50 Receitas Saudáveis",
-    text: "Receitas para secar! Este material prático oferece uma coleção de receitas saudáveis, projetadas para apoiar seus objetivos de perda de peso e bem-estar.",
-    tone: "#e85d75",
-  },
-];
-
-export const steps = [
-  {
-    number: 1,
-    title: "Faça seu Pedido",
-    text: "Clique no botão de compra, confira os dados do pedido e conclua o pagamento.",
-  },
-  {
-    number: 2,
-    title: "Receba o Acesso",
-    text: "As instruções de acesso ao material serão enviadas pelo WhatsApp e por e-mail.",
-  },
-  {
-    number: 3,
-    title: "Consulte Quando Quiser",
-    text: "O pagamento é único e o acesso ao material fica disponível para você sem mensalidades.",
-  },
-];
-
-export interface Testimonial {
-  name: string;
-  text: string;
-  reply?: string;
-  avatarColor: string;
+export interface ServiceOption {
+  label: string;
+  icon: "online" | "dine-in" | "takeaway" | "delivery";
 }
 
-export const testimonials: Testimonial[] = [
+export const serviceOptions: ServiceOption[] = [
+  { label: "Pedido on-line", icon: "online" },
+  { label: "Refeição no local", icon: "dine-in" },
+  { label: "Para viagem", icon: "takeaway" },
+  { label: "Entrega sem contato", icon: "delivery" },
+];
+
+export interface MenuHighlight {
+  name: string;
+  description: string;
+}
+
+export const menuHighlights: MenuHighlight[] = [
   {
-    name: "Andressa Braga Sato",
-    text: "O material é muito bom e organizado. Os treinos são explicados e eu consegui adaptar mesmo sendo iniciante.",
-    reply: "Obrigado pelo depoimento! 😊",
-    avatarColor: "#f6a5c0",
+    name: "Molho Especial",
+    description:
+      "A receita da casa que dá nome ao sabor do Matuto's — cremoso, apimentado na medida certa e presente em quase todos os lanches do cardápio.",
   },
   {
-    name: "Elisa Marin",
-    text: "Estou até agora sem acreditar que paguei tão barato em tanto conteúdo TOP!! Obrigadooo.",
-    reply: "Ficamos feliz em conseguir te ajudar! 🥰",
-    avatarColor: "#a5c9f6",
+    name: "Mortadela",
+    description:
+      "Fatiada na hora e generosa no lanche, é o pedido clássico de quem busca um sanduíche robusto e cheio de sabor.",
   },
   {
-    name: "Sharon Haynes",
-    text: "Achava que precisava de academia para crescer, esses treinos me provaram o contrário. Tô fazendo tudo em casa e já vejo meu corpo mudado!",
-    reply: "Seguindo os treinos você consegue fazer tranquilamente em casa e ter excelentes resultados! 😍",
-    avatarColor: "#f6d5a5",
-  },
-  {
-    name: "Bianca Zanetti Cardoso",
-    text: "Nunca fui muito de treinar, mas com 10 minutos por dia consegui criar um hábito. Agora não fico mais sem.",
-    avatarColor: "#c5a5f6",
-  },
-  {
-    name: "Suzana Romero",
-    text: "Agora vai! adeus fichas de academiaaaaa! haha",
-    avatarColor: "#a5f6d5",
-  },
-  {
-    name: "Hortência Medina",
-    text: "Já tinha tentando vários vídeos do youtube e sempre largava, aqui estou conseguindo seguir certinho por que os treinos são divididos por nível e objetivo!",
-    avatarColor: "#f6a5a5",
+    name: "Pulled Pork",
+    description:
+      "Carne suína desfiada, cozida lentamente até ficar bem macia — uma opção que foge do tradicional sem perder a essência do churrasco.",
   },
 ];
 
-export const trustCards = [
+export const menuNotes: string[] = [
+  "Variedade de pães e sabores, do pão francês ao churrasco grego completo.",
+  "Sucos naturais, com destaque para o de laranja com morango.",
+  "Hambúrgueres artesanais elogiados por quem visita pela primeira vez.",
+];
+
+export const reviewSummary =
+  "Os frequentadores dizem que a comida deste restaurante é deliciosa e de alta qualidade, com muitos destacando os saborosos hambúrgueres e o churrasco grego. Mencionam também os preços acessíveis e o ambiente agradável. Apreciam o serviço excepcional e atencioso da equipe.";
+
+export const reviewQuotes: string[] = [
+  "A comida é ótima e tem uma localização ótima, bem no centro da cidade.",
+  "Ambiente muito agradável, ótimas opções de lanche!",
+  "Melhor churrasco grego de Caruaru, com variedade de pães e sabores.",
+];
+
+export const visitorUpdate = {
+  text: "Rodamos 150 kms, mas valeu a pena. Comida excelente, atendimento diferenciado.",
+  time: "um mês atrás",
+};
+
+export interface Review {
+  name: string;
+  badge: string;
+  time: string;
+  text: string;
+}
+
+export const reviews: Review[] = [
   {
-    title: "Conteúdo bem especificado",
-    text: "Material em PDF com 25 fichas ilustradas, orientações de uso e avisos de segurança.",
-    icon: "heart",
+    name: "Niédja Martins",
+    badge: "Local Guide · 38 avaliações · 165 fotos",
+    time: "3 meses atrás",
+    text: "Fomos super bem atendidos! O garçom fez questão de explicar todos os pratos disponíveis, um por um, o que achei um diferencial gigantesco, principalmente para um local com uma proposta mais popular, com mesas e cadeiras na calçada.",
   },
   {
-    title: "Uso responsável",
-    text: "Níveis, doses e cuidados ajudam na consulta, sem substituir avaliação ou orientação profissional individual.",
-    icon: "lock",
+    name: "Renato Pereira",
+    badge: "9 avaliações · 3 fotos",
+    time: "3 meses atrás",
+    text: "Comida perfeita. Provamos boa parte do cardápio, tudo muito bom. O atendente Josef deu um show de cordialidade. O dono Jackson “Matuto”, uma simpatia. Deus abençoe vocês.",
+  },
+  {
+    name: "Gabrielly Torres",
+    badge: "Local Guide · 7 avaliações · 15 fotos",
+    time: "5 meses atrás",
+    text: "Adorei o pão francês com churrasco grego e o suco de laranja e morango é divino! Da próxima vez vou pedir uma jarra só pra mim 🥰",
   },
 ];
 
-export const faqItems = [
+export interface GalleryPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export const galleryPhotos: GalleryPhoto[] = [
   {
-    question: "O que está incluído no acesso ao material?",
-    answer:
-      "Você terá acesso ao material em PDF com 28 páginas: capa, orientações de uso, termo de uso e 25 fichas ilustradas. Cada ficha reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
+    src: "/gallery/prato-completo.jpg",
+    alt: "Prato do Matuto's Grill com carne na chapa, aipim com alho e coalho grelhado, servido com café",
+    caption: "Prato da casa",
   },
   {
-    question: "Para quem o material é indicado?",
-    answer:
-      "Para quem busca consultar exercícios de glúteos com elástico em casa ou na academia, escolhendo fichas compatíveis com sua condição e seu nível. Há 8 fichas iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
+    src: "/gallery/sanduiche-grego.jpg",
+    alt: "Sanduíche de churrasco grego do Matuto's Grill",
+    caption: "Churrasco grego",
   },
   {
-    question: "De quais elásticos e apoios eu preciso?",
-    answer:
-      "As fichas usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas exercícios compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
+    src: "/gallery/sanduiche-bacon.jpg",
+    alt: "Sanduíche com queijo cheddar e bacon do Matuto's Grill",
+    caption: "Cheddar e bacon",
   },
   {
-    question: "Como recebo o acesso ao material?",
-    answer:
-      "Após a confirmação do pagamento, as instruções de acesso ao material em PDF serão enviadas pelo WhatsApp e por e-mail. O arquivo pode ser consultado em celular, tablet ou computador com leitor de PDF.",
+    src: "/gallery/sanduiche-cliente-1.jpg",
+    alt: "Sanduíche especial do Matuto's Grill servido com chope, fotografado por um cliente",
+    caption: "Direto da mesa",
   },
   {
-    question: "Por quanto tempo o acesso fica disponível?",
-    answer:
-      "A oferta desta página informa pagamento único e acesso vitalício, sem mensalidades. Não há prazo de garantia informado no material; confira também as condições exibidas no checkout antes de concluir a compra.",
+    src: "/gallery/sanduiche-cliente-2.jpg",
+    alt: "Sanduíche recheado do Matuto's Grill com molho especial e cebolinha, fotografado por um cliente",
+    caption: "Molho especial",
   },
 ];
-
-export const checkoutUrl = "https://checkpay.me/?p=fichas-exercicios-gluteos-elastico";

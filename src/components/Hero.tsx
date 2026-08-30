@@ -1,86 +1,78 @@
-import { CheckCircleIcon, ClockIcon, TagIcon, UsersIcon } from "@heroicons/react/20/solid";
-import { benefits, heroFichas } from "../data/content";
-import { FichaMock } from "./FichaMock";
-
-function HeroMosaic() {
-  return (
-    <div className="relative">
-      <div className="grid w-full max-w-[420px] grid-cols-4 gap-2 rounded-lg bg-white p-3 shadow-lg sm:max-w-[520px]">
-        {heroFichas.map((number) => (
-          <FichaMock key={number} number={number} />
-        ))}
-      </div>
-      <div className="absolute -top-4 -right-4 animate-bounce-slow rounded-full bg-primary px-4 py-2 font-bold text-white shadow-lg">
-        93% OFF
-      </div>
-      <div className="absolute -bottom-4 left-1/2 inline-flex -translate-x-1/2 flex-col items-center rounded-full bg-primary/90 px-4 py-2 text-center text-xs text-white shadow-lg">
-        <div className="flex items-center gap-2">
-          <ClockIcon className="h-4 w-4" />
-          <span>Somente Hoje!</span>
-        </div>
-        <span className="mt-1 whitespace-nowrap">25 exercícios ilustrados</span>
-      </div>
-    </div>
-  );
-}
+import { MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { mapsDirectionsUrl, restaurant } from "../data/content";
+import { StarRating } from "./StarRating";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
-    <section className="pt-10 pb-16">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 p-4 lg:flex-row">
-        <div className="lg:w-1/2">
-          <div className="flex items-center justify-center">
-            <div className="mb-6 inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white">
-              OFERTA ESPECIAL - 93% DE DESCONTO
-            </div>
-          </div>
+    <section id="top" className="relative overflow-hidden bg-charcoal pt-16 pb-20 text-cream">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/gallery/ambiente-fachada.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/85 to-charcoal" />
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-6 px-4 text-center">
+        <Reveal>
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-light uppercase">
+            {restaurant.category} · Caruaru - PE
+          </span>
+        </Reveal>
 
-          <h1 className="mb-6 text-center text-3xl font-bold lg:text-4xl">
-            25 Fichas de Exercícios para Glúteos com Elástico Mini Band
+        <Reveal delay={80}>
+          <h1 className="font-display text-balance text-6xl leading-none tracking-wide text-white sm:text-7xl">
+            {restaurant.name}
           </h1>
-          <h2 className="mb-6 text-center text-xl font-bold text-special lg:text-2xl">
-            Execução ilustrada, doses e progressão para treinar em casa ou na academia
-          </h2>
+          <p className="mt-2 font-display text-2xl tracking-widest text-fire-light sm:text-3xl">
+            {restaurant.tagline.toUpperCase()}
+          </p>
+        </Reveal>
 
-          <div className="my-8 flex items-center justify-center lg:hidden">
-            <HeroMosaic />
+        <Reveal delay={140} className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+          <div className="flex items-center gap-2">
+            <StarRating rating={restaurant.rating} />
+            <span className="font-bold text-white">{restaurant.rating.toString().replace(".", ",")}</span>
+            <span className="text-sm text-cream/60">({restaurant.reviewCount} avaliações)</span>
           </div>
+          <span className="h-1 w-1 rounded-full bg-cream/30" />
+          <span className="text-sm text-cream/80">
+            {restaurant.priceRange} por pessoa
+          </span>
+          <span className="h-1 w-1 rounded-full bg-cream/30" />
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-400">
+            <span className="h-2 w-2 rounded-full bg-green-400" />
+            Aberto agora · Fecha {restaurant.closingTime}
+          </span>
+        </Reveal>
 
-          <div className="mb-6 flex items-center text-special">
-            <UsersIcon className="mr-2 h-5 w-5 shrink-0" />
-            <span className="leading-snug">28 páginas com 25 fichas práticas</span>
-          </div>
+        <Reveal delay={200} className="flex items-center gap-2 text-sm text-cream/70">
+          <MapPinIcon className="h-4 w-4 shrink-0 text-fire-light" />
+          {restaurant.address.line1} — {restaurant.address.line2}
+        </Reveal>
 
-          <div className="mb-6 space-y-3">
-            {benefits.map((b) => (
-              <div key={b} className="flex items-start">
-                <CheckCircleIcon className="mr-3 mt-1 h-5 w-5 shrink-0 text-special" />
-                <span className="leading-snug">{b}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-6 rounded-lg bg-primary p-6 text-white">
-            <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2">
-              <span>De:</span>
-              <span className="ml-2 text-2xl font-bold line-through">$87.00</span>
-              <span className="ml-4">Por apenas:</span>
-              <span className="ml-2 text-4xl font-bold">$7.90</span>
-              <span className="ml-4 animate-pulse rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-white">
-                93% OFF
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center text-base text-special lg:text-lg">
-            <TagIcon className="mr-2 h-5 w-5 shrink-0" />
-            <span>Material em PDF, acesso por WhatsApp e e-mail, sem mensalidades</span>
-          </div>
-        </div>
-
-        <div className="hidden items-center justify-center lg:flex lg:w-1/2">
-          <HeroMosaic />
-        </div>
+        <Reveal delay={260} className="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={mapsDirectionsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-fire px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-fire-dark"
+          >
+            <MapPinIcon className="h-5 w-5" />
+            Ver rotas
+          </a>
+          <a
+            href={`tel:${restaurant.phoneHref}`}
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/15"
+          >
+            <PhoneIcon className="h-5 w-5" />
+            {restaurant.phoneDisplay}
+          </a>
+          <a
+            href="#cardapio"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-gold-light underline decoration-gold/40 underline-offset-4 transition hover:text-gold"
+          >
+            Ver cardápio
+          </a>
+        </Reveal>
       </div>
     </section>
   );

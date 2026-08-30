@@ -1,50 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Poppins", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bebas Neue", "Poppins", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
 
-  --color-primary: #c2265f;
-  --color-primary-light: #d63a76;
-  --color-secondary: #5a1030;
-  --color-surface: #fdf1f5;
-  --color-surface-alt: #23081a;
-  --color-foreground: #2b0a1b;
-  --color-special: #f48fb1;
-  --color-cta: #30bf00;
-  --color-cta-dark: #279c00;
-  --color-star: #f15700;
+  --color-fire: #d9480f;
+  --color-fire-light: #f2703a;
+  --color-fire-dark: #a83616;
+  --color-ember: #7a2e12;
+  --color-charcoal: #1b0f08;
+  --color-charcoal-light: #2a180d;
+  --color-cream: #fdf6ec;
+  --color-cream-dark: #f3e6d3;
+  --color-ink: #2a1810;
+  --color-gold: #eeae1a;
+  --color-gold-light: #f7cf6a;
 
-  --animate-bounce-slow: bounce-slow 2.2s infinite;
-  --animate-shaker: shaker 3.2s ease-in-out infinite;
+  --shadow-card: 0 10px 25px -5px rgba(27, 15, 8, 0.15), 0 8px 10px -6px rgba(27, 15, 8, 0.1);
+
   --animate-fade-in: fade-in 0.6s ease-out both;
-
-  --shadow-card: 0 10px 25px -5px rgba(35, 8, 26, 0.15), 0 8px 10px -6px rgba(35, 8, 26, 0.1);
-}
-
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(-6%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-@keyframes shaker {
-  0%, 96%, 100% {
-    transform: scale(1) rotate(0deg);
-  }
-  97% {
-    transform: scale(1.03) rotate(-1deg);
-  }
-  98% {
-    transform: scale(1.03) rotate(1deg);
-  }
-  99% {
-    transform: scale(1.03) rotate(-1deg);
-  }
 }
 
 @keyframes fade-in {
@@ -64,24 +38,25 @@ html {
 
 body {
   margin: 0;
-  color: var(--color-foreground);
-  background: var(--color-surface);
+  color: var(--color-ink);
+  background: var(--color-cream);
 }
 
-main > section:nth-of-type(odd) {
-  background-color: var(--color-surface-alt);
-  color: #ffffff;
+.bg-ember-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-main > section:nth-of-type(even) {
-  background-color: var(--color-surface);
-  color: var(--color-foreground);
+.text-balance {
+  text-wrap: balance;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
 .reveal.reveal-visible {
