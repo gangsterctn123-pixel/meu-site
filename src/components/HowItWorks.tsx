@@ -11,7 +11,7 @@ export function HowItWorks() {
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg">
             Após a confirmação do pagamento, você recebe as instruções de acesso ao material
-            diretamente no WhatsApp e no e-mail informados.
+            diretamente no e-mail informado.
           </p>
         </Reveal>
 

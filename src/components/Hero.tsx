@@ -26,7 +26,7 @@ export function Hero() {
 
           <div className="mb-6 flex items-center text-special">
             <UsersIcon className="mr-2 h-5 w-5 shrink-0" />
-            <span className="leading-snug">28 páginas com 25 fichas práticas</span>
+            <span className="leading-snug">25 páginas com 25 fichas práticas</span>
           </div>
 
           <div className="mb-6 space-y-3">
@@ -41,7 +41,7 @@ export function Hero() {
           <div className="mb-6 rounded-lg bg-primary p-6 text-white">
             <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2">
               <span>De:</span>
-              <span className="ml-2 text-2xl font-bold line-through">$87.00</span>
+              <span className="ml-2 text-2xl font-bold line-through">$67.00</span>
               <span className="ml-4">Por apenas:</span>
               <span className="ml-2 text-4xl font-bold">$7.90</span>
               <span className="ml-4 animate-pulse rounded-full bg-secondary px-3 py-2 text-sm font-semibold text-white">
@@ -52,7 +52,7 @@ export function Hero() {
 
           <div className="flex items-center justify-center text-base text-special lg:text-lg">
             <TagIcon className="mr-2 h-5 w-5 shrink-0" />
-            <span>Material em PDF, acesso por WhatsApp e e-mail, sem mensalidades</span>
+            <span>Material em PDF, acesso pelo e-mail, sem mensalidades</span>
           </div>
         </div>
 

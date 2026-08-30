@@ -44,7 +44,7 @@ export function OfferSection() {
               </h3>
               <div className="mb-3 rounded-xl bg-primary p-3">
                 <div className="mb-1 flex items-center justify-center gap-2">
-                  <span className="text-lg line-through opacity-80">$87.00</span>
+                  <span className="text-lg line-through opacity-80">$67.00</span>
                   <span className="rounded-full bg-white/20 px-2 py-0.5 text-xs font-bold">
                     93% OFF
                   </span>

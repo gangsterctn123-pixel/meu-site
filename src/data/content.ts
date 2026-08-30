@@ -262,7 +262,7 @@ export const steps = [
   {
     number: 2,
     title: "Receba o Acesso",
-    text: "As instruções de acesso ao material serão enviadas pelo WhatsApp e por e-mail.",
+    text: "As instruções de acesso ao material serão enviadas por e-mail.",
   },
   {
     number: 3,
@@ -331,7 +331,7 @@ export const faqItems = [
   {
     question: "O que está incluído no acesso ao material?",
     answer:
-      "Você terá acesso ao material em PDF com 28 páginas: capa, orientações de uso, termo de uso e 25 fichas ilustradas. Cada ficha reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
+      "Você terá acesso ao material em PDF com 25 páginas: capa, orientações de uso, termo de uso e 25 fichas ilustradas. Cada ficha reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
   },
   {
     question: "Para quem o material é indicado?",
@@ -346,7 +346,7 @@ export const faqItems = [
   {
     question: "Como recebo o acesso ao material?",
     answer:
-      "Após a confirmação do pagamento, as instruções de acesso ao material em PDF serão enviadas pelo WhatsApp e por e-mail. O arquivo pode ser consultado em celular, tablet ou computador com leitor de PDF.",
+      "Após a confirmação do pagamento, as instruções de acesso ao material em PDF serão enviadas por e-mail. O arquivo pode ser consultado em celular, tablet ou computador com leitor de PDF.",
   },
   {
     question: "Por quanto tempo o acesso fica disponível?",
