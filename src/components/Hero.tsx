@@ -24,8 +24,8 @@ export function Hero() {
           <div className="my-8 flex items-center justify-center lg:hidden">
             <img
               src="/mockup.png"
-              alt="25 Mini Band Glute Workout Cards — mockup do material com cards de movimentos, celular e tablet"
-              className="h-auto w-[90%] object-contain"
+              alt="The G4 Glute Method — mockup do material com cards de movimentos, celular e tablet"
+              className="h-auto w-[90%] rounded-2xl object-contain"
             />
           </div>
 
@@ -64,8 +64,8 @@ export function Hero() {
         <div className="hidden items-center justify-center lg:flex lg:w-1/2">
           <img
             src="/mockup.png"
-            alt="25 Mini Band Glute Workout Cards — mockup do material com cards de movimentos, celular e tablet"
-            className="h-auto w-full max-w-xl object-contain"
+            alt="The G4 Glute Method — mockup do material com cards de movimentos, celular e tablet"
+            className="h-auto w-full max-w-xl rounded-2xl object-contain"
           />
         </div>
       </div>
