@@ -10,7 +10,7 @@ export function IntroStatement() {
           </div>
           <h2 className="mb-6 text-3xl font-semibold leading-tight lg:text-5xl">
             <p className="font-bold">
-              Pare de improvisar exercícios sem saber como executar ou dosar.
+              Pare de improvisar movimentos sem saber como executar ou dosar.
             </p>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-primary md:text-xl">

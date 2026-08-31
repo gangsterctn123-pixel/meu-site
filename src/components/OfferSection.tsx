@@ -20,7 +20,7 @@ export function OfferSection() {
             93% DE DESCONTO SOMENTE HOJE
           </span>
           <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
-            Material: 25 Sessões de Exercícios para Glúteos com Elástico Mini Band
+            Material: 25 Sessões de Movimentos para Glúteos com Elástico Mini Band
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg">Conheça o conteúdo antes de comprar.</p>
           <p className="mx-auto max-w-2xl text-base md:text-lg">

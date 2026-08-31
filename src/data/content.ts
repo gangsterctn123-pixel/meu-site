@@ -225,7 +225,7 @@ export const showcaseCards = [
   },
   {
     title: "Dose e segurança",
-    text: "Consulte séries, repetições ou tempo, descanso, dica e aviso específico de cada exercício.",
+    text: "Consulte séries, repetições ou tempo, descanso, dica e aviso específico de cada movimento.",
     fichas: [21, 23],
   },
 ];
@@ -242,7 +242,7 @@ export const bonuses = [
   {
     label: "Bônus #1",
     title: 'Guia "Comece Certo"',
-    text: "Descubra qual intensidade de mini band utilizar, quantas repetições realizar, o número recomendado de rodadas e o tempo de descanso entre os exercícios.",
+    text: "Descubra qual intensidade de mini band utilizar, quantas repetições realizar, o número recomendado de rodadas e o tempo de descanso entre os movimentos.",
   },
   {
     label: "Bônus #2",
@@ -339,12 +339,12 @@ export const faqItems = [
   {
     question: "Para quem o material é indicado?",
     answer:
-      "Para quem busca consultar exercícios de glúteos com elástico em casa ou na academia, escolhendo sessões compatíveis com sua condição e seu nível. Há 8 sessões iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
+      "Para quem busca consultar movimentos de glúteos com elástico em casa ou na academia, escolhendo sessões compatíveis com sua condição e seu nível. Há 8 sessões iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
   },
   {
     question: "De quais elásticos e apoios eu preciso?",
     answer:
-      "As sessões usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas exercícios compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
+      "As sessões usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas movimentos compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
   },
   {
     question: "Como recebo o acesso ao material?",
