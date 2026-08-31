@@ -1,8 +1,8 @@
 export const benefits = [
-  "Posições inicial e final em cada exercício",
-  "Séries, repetições e descansos já indicados",
-  "8 iniciantes, 13 intermediárias e 4 avançadas",
-  "Cuidados de segurança em todas as fichas",
+  "Demonstração visual completa, do posicionamento inicial à execução final",
+  "Protocolos prontos com séries, repetições e pausas já definidas",
+  "Progressão inteligente em 3 fases: 8 de Base, 13 de Evolução e 4 de Intensidade",
+  "Orientações de execução e segurança integradas em todas as sessões",
 ];
 
 export interface FichaDetail {
