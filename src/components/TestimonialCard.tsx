@@ -48,14 +48,14 @@ export function TestimonialCard({ name, text, reply, avatarColor }: Testimonial)
       {reply && (
         <div className="ml-6 mt-2 flex gap-3 rounded-xl bg-surface p-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">
-            ICB
+            G4
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-[10px] font-semibold uppercase tracking-wide text-foreground/50">
               Autor
             </div>
             <div className="text-sm font-semibold">
-              Info Cursos Brasil{" "}
+              Método G4 Glúteos Brasil{" "}
               <span className="font-normal text-foreground/80">{reply}</span>
             </div>
             <div className="mt-2 flex items-center gap-3 text-xs font-medium text-blue-600">
