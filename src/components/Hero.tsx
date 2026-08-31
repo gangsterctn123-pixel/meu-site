@@ -31,7 +31,7 @@ export function Hero() {
 
           <div className="mb-6 flex items-center text-special">
             <UsersIcon className="mr-2 h-5 w-5 shrink-0" />
-            <span className="leading-snug">25 páginas com 25 fichas práticas</span>
+            <span className="leading-snug">25 sessões prontas e 100 movimentos</span>
           </div>
 
           <div className="mb-6 space-y-3">
