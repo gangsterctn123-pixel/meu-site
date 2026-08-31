@@ -13,10 +13,11 @@ export function Hero() {
           </div>
 
           <h1 className="mb-6 text-center text-3xl font-bold lg:text-4xl">
-            25 Fichas de Exercícios para Glúteos com Elástico Mini Band
+            Construa Glúteos Maiores, Redondos e Fortes Usando Apenas Uma Mini Band
           </h1>
           <h2 className="mb-6 text-center text-xl font-bold text-special lg:text-2xl">
-            Execução ilustrada, doses e progressão para treinar em casa ou na academia
+            Transforme sua mini band em um sistema completo de treino, com 25 fichas prontas e 100
+            exercícios que trabalham seus glúteos de diferentes formas e ângulos.
           </h2>
 
           <div className="my-8 flex items-center justify-center lg:hidden">
