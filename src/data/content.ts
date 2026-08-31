@@ -214,13 +214,13 @@ export const fichaLibrary: Record<number, FichaDetail> = {
 
 export const showcaseCards = [
   {
-    title: "25 fichas ilustradas",
-    text: "Cada ficha mostra duas fases do movimento, objetivo e músculos trabalhados.",
+    title: "25 sessões ilustradas",
+    text: "Cada sessão mostra duas fases do movimento, objetivo e músculos trabalhados.",
     fichas: [1, 3],
   },
   {
     title: "Do iniciante ao avançado",
-    text: "**8 fichas iniciantes, 13 intermediárias e 4 avançadas** para escolher opções compatíveis com seu nível.",
+    text: "**8 sessões iniciantes, 13 intermediárias e 4 avançadas** para escolher opções compatíveis com seu nível.",
     fichas: [11, 19],
   },
   {
@@ -320,7 +320,7 @@ export const testimonials: Testimonial[] = [
 export const trustCards = [
   {
     title: "Conteúdo bem especificado",
-    text: "Material em PDF com 25 fichas ilustradas, orientações de uso e avisos de segurança.",
+    text: "Material em PDF com 25 sessões ilustradas, orientações de uso e avisos de segurança.",
     icon: "heart",
   },
   {
@@ -334,17 +334,17 @@ export const faqItems = [
   {
     question: "O que está incluído no acesso ao material?",
     answer:
-      "Você terá acesso ao material em PDF com 25 páginas: capa, orientações de uso, termo de uso e 25 fichas ilustradas. Cada ficha reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
+      "Você terá acesso ao material em PDF com 25 páginas: capa, orientações de uso, termo de uso e 25 sessões ilustradas. Cada sessão reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
   },
   {
     question: "Para quem o material é indicado?",
     answer:
-      "Para quem busca consultar exercícios de glúteos com elástico em casa ou na academia, escolhendo fichas compatíveis com sua condição e seu nível. Há 8 fichas iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
+      "Para quem busca consultar exercícios de glúteos com elástico em casa ou na academia, escolhendo sessões compatíveis com sua condição e seu nível. Há 8 sessões iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
   },
   {
     question: "De quais elásticos e apoios eu preciso?",
     answer:
-      "As fichas usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas exercícios compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
+      "As sessões usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas exercícios compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
   },
   {
     question: "Como recebo o acesso ao material?",

@@ -41,7 +41,7 @@ export function FichaMock({ number, className = "" }: FichaMockProps) {
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex items-start gap-1 p-1 pb-0.5">
           <div className="shrink-0 rounded bg-primary px-1 py-0.5 text-center leading-none text-white">
-            <div className="text-[3.5px] font-semibold">FICHA</div>
+            <div className="text-[3.5px] font-semibold">SESSÃO</div>
             <div className="text-[7px] font-extrabold">{String(f.number).padStart(2, "0")}</div>
           </div>
           <div className="min-w-0">

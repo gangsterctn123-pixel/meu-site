@@ -12,7 +12,7 @@ export function ContentShowcase() {
             O que você encontra no acesso ao material
           </h2>
           <p className="mx-auto mb-4 max-w-2xl text-base md:text-lg">
-            Material em PDF com 25 páginas: 25 fichas de exercícios, orientações de uso e cuidados
+            Material em PDF com 25 páginas: 25 sessões de exercícios, orientações de uso e cuidados
             importantes.
           </p>
           <p className="mx-auto max-w-2xl text-base font-semibold text-special md:text-2xl">
