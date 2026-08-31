@@ -146,4 +146,4 @@ export const faqItems = [
   },
 ];
 
-export const checkoutUrl = "https://checkpay.me/?p=fichas-exercicios-gluteos-elastico";
+export const checkoutUrl = "https://pay.wiapy.com/UUtG8o9BWZVF";

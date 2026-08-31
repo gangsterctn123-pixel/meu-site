@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 
 export function OfferSection() {
   return (
-    <section>
+    <section id="oferta">
       <div className="flex items-center justify-center gap-3 bg-primary p-4 text-white">
         <SparklesIcon className="h-5 w-5" />
         <span className="text-xs font-semibold lg:text-base lg:font-bold">

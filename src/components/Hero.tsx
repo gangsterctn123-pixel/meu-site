@@ -56,6 +56,13 @@ export function Hero() {
             </div>
           </div>
 
+          <a
+            href="#oferta"
+            className="mb-6 flex w-full items-center justify-center rounded-xl bg-[#30bf00] p-4 text-center text-xl font-extrabold text-white shadow-xl transition-all duration-300 hover:scale-[1.02]"
+          >
+            SIM, QUERO GARANTIR MEU MATERIAL AGORA!
+          </a>
+
           <div className="flex items-center justify-center text-base text-special lg:text-lg">
             <TagIcon className="mr-2 h-5 w-5 shrink-0" />
             <span>Material em PDF, acesso pelo e-mail, sem mensalidades</span>
