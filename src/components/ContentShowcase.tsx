@@ -1,4 +1,4 @@
-import { galleryCards } from "../data/content";
+import { galleryGroups } from "../data/content";
 import { Reveal } from "./Reveal";
 
 export function ContentShowcase() {
@@ -18,16 +18,25 @@ export function ContentShowcase() {
           </p>
         </Reveal>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 text-foreground sm:grid-cols-2 lg:grid-cols-3">
-          {galleryCards.map((card, i) => (
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 text-foreground md:grid-cols-3">
+          {galleryGroups.map((group, i) => (
             <Reveal
-              key={card.image}
-              delay={i * 80}
+              key={group.caption}
+              delay={i * 100}
               className="overflow-hidden rounded-2xl border-2 border-primary/60 bg-surface shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
-              <img src={card.image} alt={card.caption} className="w-full h-auto object-contain" />
+              <div className="grid grid-cols-2 gap-1.5 p-2.5">
+                {group.images.map((src) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={group.caption}
+                    className="h-auto w-full rounded-lg object-contain"
+                  />
+                ))}
+              </div>
               <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold">{card.caption}</h3>
+                <h3 className="text-lg font-semibold">{group.caption}</h3>
               </div>
             </Reveal>
           ))}

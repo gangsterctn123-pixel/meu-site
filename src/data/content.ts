@@ -5,13 +5,19 @@ export const benefits = [
   "Orientações de execução e segurança integradas em todas as sessões",
 ];
 
-export const galleryCards = [
-  { image: "/gallery-1.png", caption: "Ativação e Controle" },
-  { image: "/gallery-2.png", caption: "Força no Agachamento" },
-  { image: "/gallery-3.png", caption: "Trabalho em Quatro Apoios" },
-  { image: "/gallery-4.png", caption: "Variações de Ponte" },
-  { image: "/gallery-5.png", caption: "Avanço e Controle" },
-  { image: "/gallery-6.png", caption: "Caminhada com Elástico" },
+export const galleryGroups = [
+  {
+    images: ["/gallery-1.png", "/gallery-2.png"],
+    caption: "Ativação e Controle · Força no Agachamento",
+  },
+  {
+    images: ["/gallery-3.png", "/gallery-4.png"],
+    caption: "Trabalho em Quatro Apoios · Variações de Ponte",
+  },
+  {
+    images: ["/gallery-5.png", "/gallery-6.png"],
+    caption: "Avanço e Controle · Caminhada com Elástico",
+  },
 ];
 
 export const bonusIntro =
