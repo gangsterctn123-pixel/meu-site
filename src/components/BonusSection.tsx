@@ -1,5 +1,6 @@
 import { GiftIcon } from "@heroicons/react/24/outline";
-import { bonuses } from "../data/content";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+import { bonusFootnote, bonusIntro, bonuses } from "../data/content";
 import { BonusVisual } from "./BonusVisual";
 import { Reveal } from "./Reveal";
 
@@ -12,12 +13,9 @@ export function BonusSection() {
             <GiftIcon className="h-5 w-5" />
             <span className="text-sm font-bold">BÔNUS EXCLUSIVOS</span>
           </div>
-          <h2 className="mb-3 text-2xl font-bold md:text-3xl lg:text-4xl">
-            +3 Bônus Exclusivos Para Quem Adquirir Hoje
+          <h2 className="mx-auto max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
+            {bonusIntro}
           </h2>
-          <p className="mx-auto max-w-2xl text-base md:text-lg">
-            Além do material principal, você recebe acesso imediato a estes bônus incríveis.
-          </p>
         </Reveal>
 
         <div className="mx-auto grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -31,7 +29,7 @@ export function BonusSection() {
                 <div className="absolute left-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-sm font-bold text-white">
                   {bonus.label}
                 </div>
-                <BonusVisual tone={bonus.tone} />
+                <BonusVisual icon={bonus.icon} tone={bonus.tone} />
               </div>
               <div className="p-4 text-center">
                 <h3 className="text-xl font-semibold">{bonus.title}</h3>
@@ -41,6 +39,13 @@ export function BonusSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={300} className="mt-8 text-center">
+          <div className="mx-auto inline-flex max-w-2xl items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-md md:text-base">
+            <SparklesIcon className="h-5 w-5 shrink-0" />
+            <span>{bonusFootnote}</span>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,30 +1,36 @@
+import {
+  AdjustmentsHorizontalIcon,
+  BoltIcon,
+  ClipboardDocumentCheckIcon,
+} from "@heroicons/react/24/solid";
+
+const icons = {
+  dial: AdjustmentsHorizontalIcon,
+  bolt: BoltIcon,
+  tracker: ClipboardDocumentCheckIcon,
+};
+
 interface BonusVisualProps {
+  icon: keyof typeof icons;
   tone: string;
 }
 
-export function BonusVisual({ tone }: BonusVisualProps) {
+export function BonusVisual({ icon, tone }: BonusVisualProps) {
+  const Icon = icons[icon];
+
   return (
-    <div className="relative flex h-[220px] w-full items-center justify-center overflow-hidden bg-[#0d0d0d]">
-      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg tracking-tighter text-white/25">
-        ▸▸▸
-      </span>
-      <span className="absolute right-4 top-1/2 -translate-y-1/2 rotate-180 text-lg tracking-tighter text-white/25">
-        ▸▸▸
-      </span>
+    <div className="relative flex h-[200px] w-full items-center justify-center overflow-hidden bg-secondary">
       <div
-        className="h-36 w-36 rounded-full border-4 border-white/10 shadow-2xl"
-        style={{
-          background: `conic-gradient(from 90deg, ${tone}, #ffd166, ${tone}88, #ffb703, ${tone})`,
-        }}
+        className="absolute -left-8 -top-8 h-28 w-28 rounded-full blur-2xl"
+        style={{ backgroundColor: tone, opacity: 0.35 }}
+      />
+      <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-primary/20 blur-2xl" />
+
+      <div
+        className="relative flex h-24 w-24 items-center justify-center rounded-full shadow-xl ring-4 ring-white/10"
+        style={{ background: `linear-gradient(135deg, ${tone}, var(--color-primary))` }}
       >
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-black/10 backdrop-blur-[1px]">
-          <div className="grid h-24 w-24 grid-cols-2 gap-0.5 overflow-hidden rounded-full border-2 border-white/40">
-            <div className="bg-[#f4a261]" />
-            <div className="bg-[#e76f51]" />
-            <div className="bg-[#2a9d8f]" />
-            <div className="bg-[#e9c46a]" />
-          </div>
-        </div>
+        <Icon className="h-11 w-11 text-white" />
       </div>
     </div>
   );

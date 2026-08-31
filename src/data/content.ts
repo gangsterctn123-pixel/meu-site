@@ -232,24 +232,33 @@ export const showcaseCards = [
 
 export const heroFichas = [1, 11, 24, 23, 5, 6, 17, 19];
 
+export const bonusIntro =
+  "Além das 25 sessões G4, você também receberá 3 bônus exclusivos:";
+
+export const bonusFootnote =
+  "Todos os bônus estão incluídos gratuitamente e serão liberados imediatamente após a compra.";
+
 export const bonuses = [
   {
     label: "Bônus #1",
-    title: "250 Receitas Low Carb",
-    text: "Preparado para você que está com dificuldades em montar cardápios para o seu dia a dia com foco em dietas Low Carb.",
-    tone: "#ffb703",
+    title: 'Guia "Comece Certo"',
+    text: "Descubra qual intensidade de mini band utilizar, quantas repetições realizar, o número recomendado de rodadas e o tempo de descanso entre os exercícios.",
+    icon: "dial" as const,
+    tone: "#e05a86",
   },
   {
     label: "Bônus #2",
-    title: "128 Receitas Anabólicas",
-    text: "Para você que deseja escolher um estilo de vida saudável com alimentação limpa, concentrada em alimentos integrais não refinados, em vez de alternativas pré-cozidas ou processadas.",
-    tone: "#fb8500",
+    title: "Protocolo de Ativação G4",
+    text: "Uma sequência rápida de 5 minutos para ativar seus glúteos e preparar o corpo antes de iniciar qualquer uma das 25 sessões.",
+    icon: "bolt" as const,
+    tone: "#ff8552",
   },
   {
     label: "Bônus #3",
-    title: "50 Receitas Saudáveis",
-    text: "Receitas para secar! Este material prático oferece uma coleção de receitas saudáveis, projetadas para apoiar seus objetivos de perda de peso e bem-estar.",
-    tone: "#e85d75",
+    title: "Rastreador das 25 Sessões",
+    text: "Um acompanhamento visual para registrar as sessões concluídas, a resistência utilizada e sua evolução durante os treinos.",
+    icon: "tracker" as const,
+    tone: "#8a2246",
   },
 ];
 
