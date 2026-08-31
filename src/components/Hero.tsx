@@ -44,7 +44,10 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="mb-6 rounded-lg bg-primary p-6 text-white">
+          <a
+            href="#oferta"
+            className="mb-6 block rounded-lg bg-primary p-6 text-white shadow-xl transition-all duration-300 hover:scale-[1.02]"
+          >
             <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2">
               <span>De:</span>
               <span className="ml-2 text-2xl font-bold line-through">R$&nbsp;47,90</span>
@@ -54,13 +57,6 @@ export function Hero() {
                 93% OFF
               </span>
             </div>
-          </div>
-
-          <a
-            href="#oferta"
-            className="mb-6 flex w-full items-center justify-center rounded-xl bg-[#30bf00] p-4 text-center text-xl font-extrabold text-white shadow-xl transition-all duration-300 hover:scale-[1.02]"
-          >
-            SIM, QUERO GARANTIR MEU MATERIAL AGORA!
           </a>
 
           <div className="flex items-center justify-center text-base text-special lg:text-lg">
