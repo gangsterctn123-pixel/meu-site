@@ -1,7 +1,6 @@
 import { GiftIcon } from "@heroicons/react/24/outline";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { bonusFootnote, bonusIntro, bonuses } from "../data/content";
-import { BonusVisual } from "./BonusVisual";
 import { Reveal } from "./Reveal";
 
 export function BonusSection() {
@@ -25,11 +24,13 @@ export function BonusSection() {
               delay={i * 100}
               className="overflow-hidden rounded-xl border-2 border-primary/50 bg-white text-foreground shadow-lg transition-all duration-500 hover:scale-[1.02] hover:shadow-xl"
             >
-              <div className="relative">
-                <div className="absolute left-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-sm font-bold text-white">
+              <div className="flex flex-col items-center gap-3 pt-6">
+                <span className="rounded-full bg-primary px-3 py-1 text-sm font-bold text-white">
                   {bonus.label}
+                </span>
+                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-secondary text-4xl shadow-md">
+                  🎁
                 </div>
-                <BonusVisual icon={bonus.icon} tone={bonus.tone} />
               </div>
               <div className="p-4 text-center">
                 <h3 className="text-xl font-semibold">{bonus.title}</h3>

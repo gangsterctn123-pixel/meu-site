@@ -243,22 +243,16 @@ export const bonuses = [
     label: "Bônus #1",
     title: 'Guia "Comece Certo"',
     text: "Descubra qual intensidade de mini band utilizar, quantas repetições realizar, o número recomendado de rodadas e o tempo de descanso entre os exercícios.",
-    icon: "dial" as const,
-    tone: "#e05a86",
   },
   {
     label: "Bônus #2",
     title: "Protocolo de Ativação G4",
     text: "Uma sequência rápida de 5 minutos para ativar seus glúteos e preparar o corpo antes de iniciar qualquer uma das 25 sessões.",
-    icon: "bolt" as const,
-    tone: "#ff8552",
   },
   {
     label: "Bônus #3",
     title: "Rastreador das 25 Sessões",
     text: "Um acompanhamento visual para registrar as sessões concluídas, a resistência utilizada e sua evolução durante os treinos.",
-    icon: "tracker" as const,
-    tone: "#8a2246",
   },
 ];
 
