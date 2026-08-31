@@ -1,6 +1,5 @@
 import { CheckCircleIcon, TagIcon, UsersIcon } from "@heroicons/react/20/solid";
 import { benefits } from "../data/content";
-import { HeroShowcase } from "./HeroShowcase";
 
 export function Hero() {
   return (
@@ -21,7 +20,11 @@ export function Hero() {
           </h2>
 
           <div className="my-8 flex items-center justify-center lg:hidden">
-            <HeroShowcase />
+            <img
+              src="/mockup.png"
+              alt="25 Mini Band Glute Workout Cards — mockup do material com cards de exercícios, celular e tablet"
+              className="h-auto w-[90%] object-contain"
+            />
           </div>
 
           <div className="mb-6 flex items-center text-special">
@@ -57,7 +60,11 @@ export function Hero() {
         </div>
 
         <div className="hidden items-center justify-center lg:flex lg:w-1/2">
-          <HeroShowcase />
+          <img
+            src="/mockup.png"
+            alt="25 Mini Band Glute Workout Cards — mockup do material com cards de exercícios, celular e tablet"
+            className="h-auto w-full max-w-xl object-contain"
+          />
         </div>
       </div>
     </section>
