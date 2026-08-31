@@ -13,11 +13,12 @@ export function Hero() {
           </div>
 
           <h1 className="mb-6 text-center text-3xl font-bold lg:text-4xl">
-            Construa Glúteos Maiores, Redondos e Fortes Usando Apenas Uma Mini Band
+            Construa Glúteos Maiores, Redondos e Fortes em Casa Usando Apenas Uma Mini Band
           </h1>
           <h2 className="mb-6 text-center text-xl font-bold text-special lg:text-2xl">
-            Transforme sua mini band em um sistema completo de treino, com 25 fichas prontas e 100
-            exercícios que trabalham seus glúteos de diferentes formas e ângulos.
+            Transforme uma única mini band em um sistema completo de treino, com 25 sessões
+            prontas e 100 movimentos estratégicos para trabalhar seus glúteos de diferentes formas
+            e ângulos.
           </h2>
 
           <div className="my-8 flex items-center justify-center lg:hidden">
