@@ -1,4 +1,5 @@
 import { galleryGroups } from "../data/content";
+import { asset } from "../lib/asset";
 import { Reveal } from "./Reveal";
 
 export function ContentShowcase() {
@@ -29,7 +30,7 @@ export function ContentShowcase() {
                 {group.images.map((src) => (
                   <img
                     key={src}
-                    src={src}
+                    src={asset(src)}
                     alt={group.caption}
                     className="h-auto w-full rounded-lg object-contain"
                   />
