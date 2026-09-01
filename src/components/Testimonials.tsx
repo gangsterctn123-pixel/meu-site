@@ -1,10 +1,11 @@
-import { testimonials } from "../data/content";
-import { Reveal } from "./Reveal";
-import { TestimonialCard } from "./TestimonialCard";
+import { testimonialImages } from "../data/content";
+import { asset } from "../lib/asset";
 
 export function Testimonials() {
+  const track = [...testimonialImages, ...testimonialImages];
+
   return (
-    <section className="py-16 md:py-20">
+    <section className="overflow-hidden py-16 md:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-12 text-center">
           <span className="text-lg font-semibold uppercase tracking-wider">Depoimentos</span>
@@ -12,12 +13,25 @@ export function Testimonials() {
             Quem Fez, <span className="text-primary">Se SUPEROU!</span>
           </h2>
         </div>
+      </div>
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 60}>
-              <TestimonialCard {...t} />
-            </Reveal>
+      <div className="relative w-full">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-32" />
+
+        <div className="flex w-max animate-marquee gap-5">
+          {track.map((t, i) => (
+            <div
+              key={`${t.image}-${i}`}
+              className="w-48 shrink-0 overflow-hidden rounded-2xl border border-secondary/20 bg-white shadow-lg sm:w-60"
+            >
+              <img
+                src={asset(t.image)}
+                alt={`Depoimento de ${t.name}`}
+                className="h-auto w-full object-contain"
+                loading={i < testimonialImages.length ? "eager" : "lazy"}
+              />
+            </div>
           ))}
         </div>
       </div>

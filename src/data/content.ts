@@ -62,47 +62,19 @@ export const steps = [
   },
 ];
 
-export interface Testimonial {
+export interface TestimonialImage {
+  image: string;
   name: string;
-  text: string;
-  reply?: string;
-  avatarColor: string;
 }
 
-export const testimonials: Testimonial[] = [
-  {
-    name: "Andressa Braga Sato",
-    text: "O material é muito bom e organizado. Os treinos são explicados e eu consegui adaptar mesmo sendo iniciante.",
-    reply: "Obrigado pelo depoimento! 😊",
-    avatarColor: "#f6a5c0",
-  },
-  {
-    name: "Elisa Marin",
-    text: "Estou até agora sem acreditar que paguei tão barato em tanto conteúdo TOP!! Obrigadooo.",
-    reply: "Ficamos feliz em conseguir te ajudar! 🥰",
-    avatarColor: "#a5c9f6",
-  },
-  {
-    name: "Sharon Haynes",
-    text: "Achava que precisava de academia para crescer, esses treinos me provaram o contrário. Tô fazendo tudo em casa e já vejo meu corpo mudado!",
-    reply: "Seguindo os treinos você consegue fazer tranquilamente em casa e ter excelentes resultados! 😍",
-    avatarColor: "#f6d5a5",
-  },
-  {
-    name: "Bianca Zanetti Cardoso",
-    text: "Nunca fui muito de treinar, mas com 10 minutos por dia consegui criar um hábito. Agora não fico mais sem.",
-    avatarColor: "#c5a5f6",
-  },
-  {
-    name: "Suzana Romero",
-    text: "Agora vai! adeus fichas de academiaaaaa! haha",
-    avatarColor: "#a5f6d5",
-  },
-  {
-    name: "Hortência Medina",
-    text: "Já tinha tentando vários vídeos do youtube e sempre largava, aqui estou conseguindo seguir certinho por que os treinos são divididos por nível e objetivo!",
-    avatarColor: "#f6a5a5",
-  },
+export const testimonialImages: TestimonialImage[] = [
+  { image: "/testimonial-1.png", name: "Emily Carter" },
+  { image: "/testimonial-2.png", name: "Madison Reed" },
+  { image: "/testimonial-3.png", name: "Ashley Miller" },
+  { image: "/testimonial-4.png", name: "Lauren Brooks" },
+  { image: "/testimonial-5.png", name: "Hannah Parker" },
+  { image: "/testimonial-6.png", name: "Megan Collins" },
+  { image: "/testimonial-7.png", name: "Jessica Morgan" },
 ];
 
 export const trustCards = [
