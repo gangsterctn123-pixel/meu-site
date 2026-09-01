@@ -19,11 +19,11 @@ export function Testimonials() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface to-transparent sm:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-32" />
 
-        <div className="flex w-max animate-marquee gap-5">
+        <div className="flex w-max animate-marquee gap-6">
           {track.map((t, i) => (
             <div
               key={`${t.image}-${i}`}
-              className="w-48 shrink-0 overflow-hidden rounded-2xl border border-secondary/20 bg-white shadow-lg sm:w-60"
+              className="w-64 shrink-0 overflow-hidden rounded-2xl border border-secondary/20 bg-white shadow-lg sm:w-80"
             >
               <img
                 src={asset(t.image)}
