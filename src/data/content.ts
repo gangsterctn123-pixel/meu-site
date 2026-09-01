@@ -118,4 +118,4 @@ export const faqItems = [
   },
 ];
 
-export const checkoutUrl = "https://pay.wiapy.com/UUtG8o9BWZVF";
+export const checkoutUrl = "https://pay.hotmart.com/T107406547L?checkoutMode=10";
