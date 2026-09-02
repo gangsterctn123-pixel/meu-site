@@ -1,8 +1,15 @@
-import { testimonialImages } from "../data/content";
+import { testimonialImages, testimonialImageSize } from "../data/content";
 import { asset } from "../lib/asset";
+import { useReveal } from "../hooks/useReveal";
 
 export function Testimonials() {
   const track = [...testimonialImages, ...testimonialImages];
+  // The marquee moves cards via a CSS transform loop (no real scroll event),
+  // so per-image loading="lazy" never fires for cards further down the track.
+  // Instead we defer the whole carousel's image requests until the section
+  // itself scrolls near the viewport, using the same reveal hook as the rest
+  // of the page's scroll-in animations.
+  const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
     <section className="overflow-hidden py-16 md:py-20">
@@ -15,7 +22,7 @@ export function Testimonials() {
         </div>
       </div>
 
-      <div className="relative w-full">
+      <div ref={ref} className="relative w-full">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface to-transparent sm:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-32" />
 
@@ -26,10 +33,11 @@ export function Testimonials() {
               className="w-64 shrink-0 overflow-hidden rounded-2xl border border-secondary/20 bg-white shadow-lg sm:w-80"
             >
               <img
-                src={asset(t.image)}
+                src={visible ? asset(t.image) : undefined}
                 alt={`Depoimento de ${t.name}`}
+                width={testimonialImageSize.width}
+                height={testimonialImageSize.height}
                 className="h-auto w-full object-contain"
-                loading={i < testimonialImages.length ? "eager" : "lazy"}
               />
             </div>
           ))}

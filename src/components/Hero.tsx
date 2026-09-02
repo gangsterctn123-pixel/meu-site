@@ -24,8 +24,12 @@ export function Hero() {
 
           <div className="my-8 flex items-center justify-center lg:hidden">
             <img
-              src={asset("mockup.png")}
+              src={asset("mockup.webp")}
               alt="The G4 Glute Method — mockup do material com cards de movimentos, celular e tablet"
+              width={1024}
+              height={1536}
+              loading="eager"
+              fetchPriority="high"
               className="h-auto w-[90%] rounded-2xl object-contain"
             />
           </div>
@@ -67,8 +71,12 @@ export function Hero() {
 
         <div className="hidden items-center justify-center lg:flex lg:w-1/2">
           <img
-            src={asset("mockup.png")}
+            src={asset("mockup.webp")}
             alt="The G4 Glute Method — mockup do material com cards de movimentos, celular e tablet"
+            width={1024}
+            height={1536}
+            loading="eager"
+            fetchPriority="high"
             className="h-auto w-full max-w-xl rounded-2xl object-contain"
           />
         </div>

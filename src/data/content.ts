@@ -7,18 +7,20 @@ export const benefits = [
 
 export const galleryGroups = [
   {
-    images: ["/gallery-1.png", "/gallery-2.png"],
+    images: ["/gallery-1.webp", "/gallery-2.webp"],
     caption: "Ativação e Controle · Força no Agachamento",
   },
   {
-    images: ["/gallery-3.png", "/gallery-4.png"],
+    images: ["/gallery-3.webp", "/gallery-4.webp"],
     caption: "Trabalho em Quatro Apoios · Variações de Ponte",
   },
   {
-    images: ["/gallery-5.png", "/gallery-6.png"],
+    images: ["/gallery-5.webp", "/gallery-6.webp"],
     caption: "Avanço e Controle · Caminhada com Elástico",
   },
 ];
+
+export const galleryImageSize = { width: 800, height: 1200 };
 
 export const bonusIntro =
   "Além das 25 sessões G4, você também receberá 3 bônus exclusivos:";
@@ -68,14 +70,16 @@ export interface TestimonialImage {
 }
 
 export const testimonialImages: TestimonialImage[] = [
-  { image: "/testimonial-1.png", name: "Emily Carter" },
-  { image: "/testimonial-2.png", name: "Madison Reed" },
-  { image: "/testimonial-3.png", name: "Ashley Miller" },
-  { image: "/testimonial-4.png", name: "Lauren Brooks" },
-  { image: "/testimonial-5.png", name: "Hannah Parker" },
-  { image: "/testimonial-6.png", name: "Megan Collins" },
-  { image: "/testimonial-7.png", name: "Jessica Morgan" },
+  { image: "/testimonial-1.webp", name: "Emily Carter" },
+  { image: "/testimonial-2.webp", name: "Madison Reed" },
+  { image: "/testimonial-3.webp", name: "Ashley Miller" },
+  { image: "/testimonial-4.webp", name: "Lauren Brooks" },
+  { image: "/testimonial-5.webp", name: "Hannah Parker" },
+  { image: "/testimonial-6.webp", name: "Megan Collins" },
+  { image: "/testimonial-7.webp", name: "Jessica Morgan" },
 ];
+
+export const testimonialImageSize = { width: 900, height: 1951 };
 
 export const trustCards = [
   {

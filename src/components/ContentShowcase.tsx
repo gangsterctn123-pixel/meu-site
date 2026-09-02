@@ -1,4 +1,4 @@
-import { galleryGroups } from "../data/content";
+import { galleryGroups, galleryImageSize } from "../data/content";
 import { asset } from "../lib/asset";
 import { Reveal } from "./Reveal";
 
@@ -32,6 +32,9 @@ export function ContentShowcase() {
                     key={src}
                     src={asset(src)}
                     alt={group.caption}
+                    width={galleryImageSize.width}
+                    height={galleryImageSize.height}
+                    loading="lazy"
                     className="h-auto w-full rounded-lg object-contain"
                   />
                 ))}
