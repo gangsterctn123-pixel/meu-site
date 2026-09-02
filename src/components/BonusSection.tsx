@@ -10,7 +10,7 @@ export function BonusSection() {
         <Reveal className="mb-8 text-center md:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-white">
             <GiftIcon className="h-5 w-5" />
-            <span className="text-sm font-bold">BÔNUS EXCLUSIVOS</span>
+            <span className="text-sm font-bold">EXCLUSIVE BONUSES</span>
           </div>
           <h2 className="mx-auto max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
             {bonusIntro}

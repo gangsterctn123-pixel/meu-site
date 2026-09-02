@@ -1,66 +1,65 @@
 export const benefits = [
-  "Demonstração visual completa, do posicionamento inicial à execução final",
-  "Protocolos prontos com séries, repetições e pausas já definidas",
-  "Progressão inteligente em 3 fases: 8 de Base, 13 de Evolução e 4 de Intensidade",
-  "Orientações de execução e segurança integradas em todas as sessões",
+  "Clear visual demos, from starting position to full execution",
+  "Ready-to-follow sets, reps, and rest times for every movement",
+  "Smart 3-phase progression: Foundation, Growth, and Intensity",
+  "Form and safety guidance built into every session",
 ];
 
 export const galleryGroups = [
   {
     images: ["/gallery-1.webp", "/gallery-2.webp"],
-    caption: "Ativação e Controle · Força no Agachamento",
+    caption: "Activation & Control · Squat Strength",
   },
   {
     images: ["/gallery-3.webp", "/gallery-4.webp"],
-    caption: "Trabalho em Quatro Apoios · Variações de Ponte",
+    caption: "All-Fours Work · Bridge Variations",
   },
   {
     images: ["/gallery-5.webp", "/gallery-6.webp"],
-    caption: "Avanço e Controle · Caminhada com Elástico",
+    caption: "Lunge & Control · Band Walks",
   },
 ];
 
 export const galleryImageSize = { width: 800, height: 1200 };
 
-export const bonusIntro =
-  "Além das 25 sessões G4, você também receberá 3 bônus exclusivos:";
+export const bonusIntro = "Along with the G4 Method, you'll also get 3 exclusive bonuses:";
 
 export const bonusFootnote =
-  "Todos os bônus estão incluídos gratuitamente e serão liberados imediatamente após a compra.";
+  "All bonuses are included at no extra cost and unlocked right after purchase.";
 
 export const bonuses = [
   {
-    label: "Bônus #1",
-    title: 'Guia "Comece Certo"',
-    text: "Descubra qual intensidade de mini band utilizar, quantas repetições realizar, o número recomendado de rodadas e o tempo de descanso entre os movimentos.",
+    label: "Bonus #1",
+    title: 'The "Start Right" Guide',
+    text: "Learn which mini band resistance to use, how many reps and rounds to do, and how long to rest between movements.",
   },
   {
-    label: "Bônus #2",
-    title: "Protocolo de Ativação G4",
-    text: "Uma sequência rápida de 5 minutos para ativar seus glúteos e preparar o corpo antes de iniciar qualquer uma das 25 sessões.",
+    label: "Bonus #2",
+    title: "G4 Activation Protocol",
+    text: "A quick 5-minute warm-up to activate your glutes before any session.",
   },
   {
-    label: "Bônus #3",
-    title: "Rastreador das 25 Sessões",
-    text: "Um acompanhamento visual para registrar as sessões concluídas, a resistência utilizada e sua evolução durante os treinos.",
+    label: "Bonus #3",
+    title: "25-Session Progress Tracker",
+    text: "A simple visual tracker to log completed sessions, band resistance, and your progress over time.",
   },
 ];
 
 export const steps = [
   {
     number: 1,
-    title: "Faça seu Pedido",
-    text: "Clique no botão de compra, confira os dados do pedido e conclua o pagamento.",
+    title: "Place Your Order",
+    text: "Click the button below, confirm your order details, and complete your payment.",
   },
   {
     number: 2,
-    title: "Receba o Acesso",
-    text: "As instruções de acesso ao material serão enviadas por e-mail.",
+    title: "Get Instant Access",
+    text: "Your access instructions will be sent straight to your inbox.",
   },
   {
     number: 3,
-    title: "Consulte Quando Quiser",
-    text: "O pagamento é único e o acesso ao material fica disponível para você sem mensalidades.",
+    title: "Use It Anytime",
+    text: "It's a one-time payment — no subscriptions, and it's yours to keep.",
   },
 ];
 
@@ -83,42 +82,42 @@ export const testimonialImageSize = { width: 900, height: 1951 };
 
 export const trustCards = [
   {
-    title: "Conteúdo bem especificado",
-    text: "Material em PDF com 25 sessões ilustradas, orientações de uso e avisos de segurança.",
+    title: "Clearly Outlined Content",
+    text: "A PDF guide with 25 illustrated sessions, usage instructions, and safety notes.",
     icon: "heart",
   },
   {
-    title: "Uso responsável",
-    text: "Níveis, doses e cuidados ajudam na consulta, sem substituir avaliação ou orientação profissional individual.",
+    title: "Responsible Use",
+    text: "Levels and guidance to help you follow along safely — not a substitute for professional advice.",
     icon: "lock",
   },
 ];
 
 export const faqItems = [
   {
-    question: "O que está incluído no acesso ao material?",
+    question: "What's included in the G4 Method?",
     answer:
-      "Você terá acesso ao material em PDF com 25 páginas: capa, orientações de uso, termo de uso e 25 sessões ilustradas. Cada sessão reúne duas fases do movimento, objetivo, músculos, cinco passos, séries, repetições ou tempo, descanso, dica e aviso.",
+      "You'll get a 25-page PDF guide with a cover, usage instructions, terms of use, and 25 illustrated sessions. Each session includes the movement breakdown, target muscles, step-by-step instructions, sets, reps or time, rest, a helpful tip, and a safety note.",
   },
   {
-    question: "Para quem o material é indicado?",
+    question: "Who is the G4 Method for?",
     answer:
-      "Para quem busca consultar movimentos de glúteos com elástico em casa ou na academia, escolhendo sessões compatíveis com sua condição e seu nível. Há 8 sessões iniciantes, 13 intermediárias e 4 avançadas. O conteúdo é educativo e não substitui avaliação ou orientação profissional; gestantes, menores, idosos, pessoas com cirurgia recente, dor persistente ou doenças crônicas devem buscar orientação antes de iniciar.",
+      "It's designed for anyone who wants to train their glutes with a mini band at home or at the gym, choosing sessions that match their level. It's beginner-friendly, with 8 beginner, 13 intermediate, and 4 advanced sessions. The content is educational and isn't a substitute for professional guidance — if you're pregnant, a minor, recovering from surgery, or dealing with chronic pain or a health condition, please check with a doctor before starting.",
   },
   {
-    question: "De quais elásticos e apoios eu preciso?",
+    question: "What equipment do I need?",
     answer:
-      "As sessões usam mini band e faixa elástica longa. Algumas opções também pedem banco firme, cadeira, degrau antiderrapante, parede, apoio ou ancoragem própria. Escolha apenas movimentos compatíveis com os recursos disponíveis e inspecione a faixa antes do uso.",
+      "Most sessions just need a mini band and a long resistance band. A few movements also use a sturdy bench, chair, non-slip step, wall, or other support. You can stick to whatever movements match what you already have on hand — just check your band before each use.",
   },
   {
-    question: "Como recebo o acesso ao material?",
+    question: "How do I access the method?",
     answer:
-      "Após a confirmação do pagamento, as instruções de acesso ao material em PDF serão enviadas por e-mail. O arquivo pode ser consultado em celular, tablet ou computador com leitor de PDF.",
+      "Right after your payment is confirmed, we'll email you access to your PDF guide. You can open it on your phone, tablet, or computer with any PDF reader.",
   },
   {
-    question: "Por quanto tempo o acesso fica disponível?",
+    question: "Is this a one-time payment, or a subscription?",
     answer:
-      "A oferta desta página informa pagamento único e acesso vitalício, sem mensalidades. Não há prazo de garantia informado no material; confira também as condições exibidas no checkout antes de concluir a compra.",
+      "It's a one-time payment with lifetime access — no subscriptions, ever. Refund terms aren't listed on this page, so please check the details shown at checkout before completing your purchase.",
   },
 ];
 

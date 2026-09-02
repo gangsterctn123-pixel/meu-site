@@ -44,8 +44,10 @@ export function Faq() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl">
           <Reveal className="mb-10 text-center md:mb-12">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">Perguntas Frequentes</h2>
-            <p className="text-base md:text-lg">Tire suas dúvidas sobre o material</p>
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base md:text-lg">Answers to your questions about the G4 Method</p>
           </Reveal>
 
           <div className="space-y-3 md:space-y-4">

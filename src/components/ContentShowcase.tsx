@@ -8,14 +8,13 @@ export function ContentShowcase() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <Reveal className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
-            O que você encontra no acesso ao material
+            What's Inside the G4 Method
           </h2>
           <p className="mx-auto mb-4 max-w-2xl text-base md:text-lg">
-            Material em PDF com 25 páginas: 25 sessões de movimentos, orientações de uso e cuidados
-            importantes.
+            A complete 25-page PDF guide: 25 glute sessions, how-to instructions, and safety tips.
           </p>
           <p className="mx-auto max-w-2xl text-base font-semibold text-special md:text-2xl">
-            CADA MOVIMENTO TEM DUAS FASES E CINCO PASSOS
+            EVERY MOVEMENT BROKEN DOWN STEP BY STEP
           </p>
         </Reveal>
 

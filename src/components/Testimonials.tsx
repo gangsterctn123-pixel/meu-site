@@ -15,9 +15,9 @@ export function Testimonials() {
     <section className="overflow-hidden py-16 md:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <span className="text-lg font-semibold uppercase tracking-wider">Depoimentos</span>
+          <span className="text-lg font-semibold uppercase tracking-wider">Testimonials</span>
           <h2 className="mt-2 text-2xl font-bold md:text-4xl">
-            Quem Fez, <span className="text-primary">Se SUPEROU!</span>
+            Real Women, <span className="text-primary">Real Results!</span>
           </h2>
         </div>
       </div>
@@ -34,7 +34,7 @@ export function Testimonials() {
             >
               <img
                 src={visible ? asset(t.image) : undefined}
-                alt={`Depoimento de ${t.name}`}
+                alt={`Testimonial from ${t.name}`}
                 width={testimonialImageSize.width}
                 height={testimonialImageSize.height}
                 className="h-auto w-full object-contain"

@@ -10,10 +10,10 @@ export function TrustSection() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <Reveal className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
-            Sua Confiança é Nossa Prioridade
+            Your Trust Is Our Priority
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg">
-            Conteúdo transparente e uma compra sem surpresas
+            Transparent content and a purchase with no surprises
           </p>
         </Reveal>
 

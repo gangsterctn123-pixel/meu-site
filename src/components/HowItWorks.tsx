@@ -7,11 +7,11 @@ export function HowItWorks() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <Reveal className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
-            Como você recebe o acesso ao material?
+            How It Works
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg">
-            Após a confirmação do pagamento, você recebe as instruções de acesso ao material
-            diretamente no e-mail informado.
+            Once your payment is confirmed, you'll get access instructions sent straight to your
+            email.
           </p>
         </Reveal>
 
