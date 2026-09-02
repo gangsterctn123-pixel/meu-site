@@ -23,7 +23,7 @@ export function Hero() {
 
           <div className="my-8 flex items-center justify-center lg:hidden">
             <img
-              src={asset("mockup.webp")}
+              src={asset("mockup.avif")}
               alt="The G4 Glute Method — mockup with movement cards, phone, and tablet"
               width={1024}
               height={1536}
@@ -70,7 +70,7 @@ export function Hero() {
 
         <div className="hidden items-center justify-center lg:flex lg:w-1/2">
           <img
-            src={asset("mockup.webp")}
+            src={asset("mockup.avif")}
             alt="The G4 Glute Method — mockup with movement cards, phone, and tablet"
             width={1024}
             height={1536}
