@@ -113,6 +113,10 @@
     .grain-animated {
       animation: none;
     }
+    /* O manifesto se revela com a rolagem; sem animação, fica todo legível. */
+    .manifesto-word {
+      opacity: 1 !important;
+    }
   }
 }
 

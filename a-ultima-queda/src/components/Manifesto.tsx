@@ -12,7 +12,7 @@ const words = manifesto.text.split(" ").map((raw) => ({
 function Word({ word, accent, progress, range }: { word: string; accent: boolean; progress: MotionValue<number>; range: [number, number] }) {
   const opacity = useTransform(progress, range, [0.14, 1]);
   return (
-    <motion.span style={{ opacity }} className={`inline-block pr-[0.22em] ${accent ? "text-red" : ""}`}>
+    <motion.span style={{ opacity }} className={`manifesto-word inline-block pr-[0.22em] ${accent ? "text-red" : ""}`}>
       {word}
     </motion.span>
   );
@@ -43,10 +43,10 @@ export function Manifesto() {
           <p className="kicker hidden text-white/50 sm:block">Leia em voz alta</p>
         </div>
 
-        <h2 id="manifesto-titulo" aria-label={manifesto.text.replaceAll("*", "")} className="display mt-12 flex flex-wrap pt-[0.2em] text-[clamp(3rem,11.5vw,10.5rem)] leading-[0.92] sm:mt-16">
+        <h2 id="manifesto-titulo" aria-label={manifesto.text.replaceAll("*", "")} className="display mt-12 flex flex-wrap gap-y-[0.16em] pt-[0.2em] text-[clamp(3rem,11.5vw,10.5rem)] leading-[0.92] sm:mt-16">
           {reduce ? (
             words.map(({ word, accent }, i) => (
-              <span key={i} className={`inline-block pr-[0.22em] ${accent ? "text-red" : ""}`}>
+              <span key={i} className={`manifesto-word inline-block pr-[0.22em] ${accent ? "text-red" : ""}`}>
                 {word}
               </span>
             ))

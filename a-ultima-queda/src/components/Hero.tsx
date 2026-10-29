@@ -28,9 +28,12 @@ export function Hero() {
 
         <h1 className="display mt-1 text-white [container-type:inline-size] lg:mt-1">
           {hero.title.map((line, i) => (
-            <span key={line} className="block overflow-hidden pt-[0.24em] lg:inline-block lg:align-top">
+            <span
+              key={line}
+              className={`block overflow-hidden pt-[0.24em] lg:inline-block lg:align-top ${i === 0 ? "text-[calc(100cqw/3.52)]" : "text-[calc(100cqw/2.42)]"} lg:text-[calc(100cqw/6.2)]`}
+            >
               <motion.span
-                className={`block ${i === 0 ? "text-[calc(100cqw/3.52)]" : "text-[calc(100cqw/2.42)]"} lg:text-[calc(100cqw/6.2)]`}
+                className="block"
                 initial={{ y: "102%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1.1, delay: 0.1 + i * 0.12, ease }}
