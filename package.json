@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "video:studio": "remotion studio",
+    "video:render": "remotion render CogumeloLiliputiano out/cogumelo.mp4"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@remotion/player": "^4.0.540",
+    "@remotion/cli": "4.0.540",
+    "@remotion/fonts": "4.0.540",
+    "@remotion/player": "4.0.540",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "remotion": "^4.0.540"
+    "remotion": "4.0.540"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
