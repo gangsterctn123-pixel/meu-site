@@ -12,9 +12,8 @@ const css = '.reveal{opacity:1!important;transform:none!important;transition:non
   await m.goto(url, { waitUntil: 'networkidle' });
   await m.addStyleTag({ content: css + '.sticky{display:none!important}' });
   await m.screenshot({ path: out('m-hero.jpg'), type: 'jpeg', quality: 85 });
-  for (const [sel, name, sticky] of [['#especialidades', 'm-servicos.jpg'], ['#clinica', 'm-galeria.jpg'], ['#sobre', 'm-sobre.jpg'], ['.final', 'm-final.jpg', true]]) {
+  for (const [sel, name] of [['#especialidades', 'm-servicos.jpg'], ['#galeria', 'm-galeria.jpg'], ['#contato', 'm-final.jpg']]) {
     await m.evaluate((s) => window.scrollTo(0, document.querySelector(s).offsetTop), sel);
-    if (sticky) await m.addStyleTag({ content: '.sticky{display:flex!important;transform:none!important}' });
     await m.waitForTimeout(150);
     await m.screenshot({ path: out(name), type: 'jpeg', quality: 85 });
   }
