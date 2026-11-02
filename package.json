@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@remotion/player": "^4.0.540",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.540"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
