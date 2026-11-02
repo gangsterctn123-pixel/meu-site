@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "video:studio": "remotion studio",
-    "video:render": "remotion render CogumeloLiliputiano out/cogumelo.mp4"
+    "video:render": "remotion render CogumeloLiliputiano out/cogumelo.mp4",
+    "video:photos": "node scripts/pexels-download.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

@@ -2,6 +2,7 @@ import type React from "react";
 import {
   AbsoluteFill,
   Audio,
+  Img,
   interpolate,
   random,
   Sequence,
@@ -17,7 +18,45 @@ import {
   TIMELINE,
   type TimedScene,
 } from "./timing";
-import { VisualView } from "./Visuals";
+import photosJson from "./photos.json";
+import { PhotoContext, VisualView } from "./Visuals";
+
+type Photo = { file: string; photographer: string; url: string };
+const PHOTOS = photosJson as Record<string, Photo | undefined>;
+
+// Foto do Pexels em tela cheia, escurecida e com movimento lento (Ken Burns).
+const PhotoLayer: React.FC<{ photo: Photo; duration: number; seed: string }> = ({
+  photo,
+  duration,
+  seed,
+}) => {
+  const frame = useCurrentFrame();
+  const t = interpolate(frame, [0, duration], [0, 1]);
+  const zoomIn = random(`zoom-${seed}`) > 0.5;
+  const scale = zoomIn ? 1.05 + t * 0.12 : 1.17 - t * 0.12;
+  const panX = (random(`pan-${seed}`) - 0.5) * 60 * (t - 0.5);
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Img
+        src={staticFile(photo.file)}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          transform: `scale(${scale}) translateX(${panX}px)`,
+          filter: "brightness(0.42) saturate(0.75) contrast(1.1)",
+        }}
+      />
+      <AbsoluteFill
+        style={{
+          background: `linear-gradient(180deg, ${C.bg}66 0%, transparent 35%, ${C.bg}cc 100%)`,
+          mixBlendMode: "multiply",
+        }}
+      />
+      <AbsoluteFill style={{ background: `${C.glow}`, opacity: 0.05, mixBlendMode: "overlay" }} />
+    </AbsoluteFill>
+  );
+};
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -99,10 +138,18 @@ const SceneView: React.FC<{ scene: TimedScene; isLast: boolean }> = ({ scene, is
   const opacity = interpolate(frame, [0, fade, d - fade, d], [0, 1, 1, isLast ? 1 : 0], clamp);
   const drift = interpolate(frame, [0, d], [1, 1.04]);
   const speakingFrames = d - (isLast ? TAIL_SECONDS * FPS : 0);
+  const photo = PHOTOS[scene.id];
   return (
     <AbsoluteFill>
+      {photo && (
+        <AbsoluteFill style={{ opacity }}>
+          <PhotoLayer photo={photo} duration={d} seed={scene.id} />
+        </AbsoluteFill>
+      )}
       <AbsoluteFill style={{ opacity, transform: `scale(${drift})` }}>
-        <VisualView visual={scene.visual} duration={d} />
+        <PhotoContext.Provider value={Boolean(photo)}>
+          <VisualView visual={scene.visual} duration={d} />
+        </PhotoContext.Provider>
       </AbsoluteFill>
       <Captions text={scene.text} speakingFrames={speakingFrames} />
     </AbsoluteFill>
@@ -116,7 +163,6 @@ export const MushroomVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg, opacity: fadeOut }}>
       <Background />
-      <Spores />
       {TIMELINE.scenes.map((scene, i) => (
         <Sequence
           key={scene.id}
@@ -127,6 +173,7 @@ export const MushroomVideo: React.FC = () => {
           <SceneView scene={scene} isLast={i === TIMELINE.scenes.length - 1} />
         </Sequence>
       ))}
+      <Spores />
       <Vignette />
       {NARRATION.src && <Audio src={staticFile(NARRATION.src)} />}
     </AbsoluteFill>

@@ -1,4 +1,5 @@
 import type React from "react";
+import { createContext, useContext } from "react";
 import {
   AbsoluteFill,
   Easing,
@@ -12,6 +13,10 @@ import type { Visual } from "./script";
 import { BODY_FONT, C, TITLE_FONT } from "./theme";
 
 type VP = { duration: number };
+
+// Verdadeiro quando a cena tem uma foto do Pexels ao fundo: os desenhos
+// que concorrem com a foto (mesa, cogumelo, olho, livro) ficam escondidos.
+export const PhotoContext = createContext(false);
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -174,6 +179,7 @@ const Stage: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }
 
 const Table: React.FC<VP & { variant: "dinner" | "cloth" }> = ({ variant, duration }) => {
   const frame = useCurrentFrame();
+  const photo = useContext(PhotoContext);
   const appear = interpolate(frame, [30, 75], [0, 1], clamp);
   const plates = [
     [520, 560],
@@ -229,9 +235,10 @@ const Table: React.FC<VP & { variant: "dinner" | "cloth" }> = ({ variant, durati
             <stop offset="100%" stopColor="#4b4560" />
           </linearGradient>
         </defs>
-        <ellipse cx={960} cy={620} rx={940} ry={360} fill="url(#wood)" />
-        <circle cx={960} cy={330} r={260} fill="url(#candle)" />
+        {!photo && <ellipse cx={960} cy={620} rx={940} ry={360} fill="url(#wood)" />}
+        <circle cx={960} cy={330} r={260} fill="url(#candle)" opacity={photo ? 0.4 : 1} />
         {variant === "dinner" &&
+          !photo &&
           plates.map(([x, y]) => (
             <g key={x}>
               <ellipse cx={x} cy={y} rx={170} ry={62} fill="#d8d3c8" opacity={0.85} />
@@ -242,7 +249,7 @@ const Table: React.FC<VP & { variant: "dinner" | "cloth" }> = ({ variant, durati
           walkers.map((w, i) => <Figure key={i} {...w} opacity={appear} />)}
         {variant === "cloth" && (
           <g>
-            <path d={clothPath} fill="url(#cloth)" opacity={0.9} />
+            <path d={clothPath} fill="url(#cloth)" opacity={photo ? 0.75 : 0.9} />
             {[0.25, 0.5, 0.75].map((t) => (
               <path
                 key={t}
@@ -261,13 +268,18 @@ const Table: React.FC<VP & { variant: "dinner" | "cloth" }> = ({ variant, durati
 
 const MushroomVisual: React.FC<VP & { caption?: string }> = ({ caption }) => {
   const p = useEnter(0, 120);
+  const photo = useContext(PhotoContext);
   return (
     <Stage>
       <svg
         viewBox="-480 -340 960 720"
         width={900}
         height={675}
-        style={{ opacity: p, transform: `translateY(${(1 - p) * 60}px)` }}
+        style={{
+          opacity: p,
+          transform: `translateY(${(1 - p) * 60}px)`,
+          display: photo ? "none" : undefined,
+        }}
       >
         <Mushroom />
       </svg>
@@ -349,11 +361,17 @@ const Species: React.FC<VP & { name: string; detail: string; unknown?: boolean }
 }) => {
   const frame = useCurrentFrame();
   const p = useEnter(0, 120);
+  const photo = useContext(PhotoContext);
   return (
     <AbsoluteFill>
       <Stage style={{ flexDirection: "row", gap: 60 }}>
-        <svg viewBox="-480 -340 960 720" width={760} height={570} style={{ opacity: p }}>
-          <Mushroom />
+        <svg
+          viewBox="-480 -340 960 720"
+          width={760}
+          height={570}
+          style={{ opacity: p, display: photo && !unknown ? "none" : undefined }}
+        >
+          {!photo && <Mushroom />}
           {unknown && (
             <text
               x={0}
@@ -428,9 +446,15 @@ const Statement: React.FC<VP & { text: string; accent?: string }> = ({ text, acc
 const Book: React.FC<VP & { title: string; detail: string }> = ({ title, detail }) => {
   const frame = useCurrentFrame();
   const open = interpolate(frame, [0, 40], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const photo = useContext(PhotoContext);
   return (
     <Stage style={{ flexDirection: "column", gap: 10 }}>
-      <svg viewBox="-600 -260 1200 520" width={1100} height={477}>
+      <svg
+        viewBox="-600 -260 1200 520"
+        width={1100}
+        height={477}
+        style={{ display: photo ? "none" : undefined }}
+      >
         <defs>
           <linearGradient id="page" x1="0" x2="1">
             <stop offset="0%" stopColor="#cbbf9f" />
@@ -613,6 +637,7 @@ const Eye: React.FC<VP & { variant: "camera" | "glitch" | "open"; label?: string
   duration,
 }) => {
   const frame = useCurrentFrame();
+  const photo = useContext(PhotoContext);
   const open = variant === "open" ? interpolate(frame, [0, 35], [0.02, 1], { ...clamp, easing: Easing.out(Easing.cubic) }) : 1;
   const look = Math.sin(frame / 45) * 50;
   const pupil = 52 + Math.sin(frame / 30) * 8;
@@ -656,7 +681,12 @@ const Eye: React.FC<VP & { variant: "camera" | "glitch" | "open"; label?: string
 
   return (
     <Stage style={{ flexDirection: "column", gap: 30 }}>
-      <svg viewBox="-800 -380 1600 760" width={1400} height={665}>
+      <svg
+        viewBox="-800 -380 1600 760"
+        width={1400}
+        height={665}
+        style={{ display: photo ? "none" : undefined }}
+      >
         <defs>
           <radialGradient id="iris">
             <stop offset="30%" stopColor="#1f8f5f" />
