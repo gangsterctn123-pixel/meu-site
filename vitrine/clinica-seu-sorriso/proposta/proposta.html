@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta — Site Clínica Seu Sorriso</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+  // ===== EDITE AQUI e rode: node vitrine/clinica-seu-sorriso/proposta/gerar-pdf.cjs =====
+  // Campos vazios ("") ficam escondidos no PDF.
+  window.CONFIG = {
+    seuNome: "",        // ex.: "Maria Silva — Criação de Sites"
+    whatsapp: "",       // ex.: "(81) 99999-9999"
+    email: "",          // ex.: "contato@seusite.com"
+    instagram: "",      // ex.: "@seuperfil"
+    preco: "",          // ex.: "R$ 497"
+    precoDetalhe: "",   // ex.: "pagamento único · ou 3x sem juros"
+    prazo: "",          // ex.: "5 dias úteis"
+    linkPrevia: ""      // ex.: "https://clinica-seu-sorriso.netlify.app"
+  };
+</script>
+<style>
+  @page{size:A4;margin:0}
+  :root{--dark:#16120f;--forest:#1b2620;--beige:#f2eee8;--gold:#b08d67;--gold2:#c9a57f;--ink:#2a2622;--muted:#7b736b;--line:#ddd5cb;--whats:#25d366}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Jost,system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05}
+  .page{width:210mm;height:297mm;padding:20mm 18mm;position:relative;overflow:hidden;page-break-after:always;background:var(--beige)}
+  .page:last-child{page-break-after:auto}
+  .num{position:absolute;bottom:10mm;left:18mm;right:18mm;display:flex;justify-content:space-between;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:#a99f94}
+  .dark .num{color:#6f655b}
+  .eyebrow{font-size:8pt;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow::after{content:"";display:block;width:9mm;height:1px;background:var(--gold);margin-top:3mm}
+  h2{font-size:30pt;margin:5mm 0 6mm}
+  p.lead{font-size:11.5pt;font-weight:300;color:var(--muted);line-height:1.6;max-width:150mm}
+  .phone{border:2.6mm solid #0d0b09;border-radius:9mm;overflow:hidden;background:#000;box-shadow:0 6mm 16mm rgba(0,0,0,.28)}
+  .phone img{display:block;width:100%}
+  .dark{background:var(--dark);color:#fff}
+
+  /* capa */
+  .cover{background:radial-gradient(ellipse at 80% 20%,rgba(214,170,120,.28),transparent 55%),linear-gradient(165deg,#3a2c21,#16120f 55%,#0e0b09);color:#fff;display:flex;flex-direction:column}
+  .cover .top{display:flex;justify-content:space-between;align-items:center}
+  .cover .logo{width:20mm;height:20mm;border-radius:50%;background:#fff;overflow:hidden}
+  .cover .logo img{width:100%;height:100%;object-fit:contain}
+  .cover .tag{font-size:8pt;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(201,165,127,.45);padding:2mm 4mm}
+  .cover h1{font-size:46pt;font-weight:500;margin-top:16mm}
+  .cover h1 em{color:var(--gold2);font-style:italic}
+  .cover p{font-weight:300;font-size:12pt;opacity:.85;margin-top:6mm;max-width:120mm;line-height:1.6}
+  .cover .phones{position:absolute;left:0;right:0;bottom:0;height:150mm}
+  .cover .phones .phone{position:absolute;width:56mm;height:121mm}
+  .cover .phones .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .cover .phones .p1{left:22mm;bottom:-20mm;transform:rotate(-6deg)}
+  .cover .phones .p2{left:50%;margin-left:-32mm;width:64mm;height:138mm;bottom:-6mm;z-index:2}
+  .cover .phones .p3{right:22mm;bottom:-20mm;transform:rotate(6deg)}
+  /* oportunidade */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:10mm}
+  .card{background:#fff;border-radius:3mm;padding:7mm;border:1px solid var(--line)}
+  .card .ic{width:12mm;height:12mm;border:1px solid #bfb3a5;border-radius:50%;display:grid;place-items:center;font-size:14pt;margin-bottom:4mm}
+  .card h3{font-size:16pt;margin-bottom:2mm}
+  .card p{font-size:9.8pt;color:var(--muted);line-height:1.55}
+  .quote{margin-top:10mm;background:var(--forest);color:#fff;border-radius:3mm;padding:9mm 10mm;display:flex;gap:7mm;align-items:center}
+  .quote b{font-family:"Cormorant Garamond",serif;font-size:20pt;font-weight:500;line-height:1.2}
+  .quote small{display:block;margin-top:2mm;font-size:9.5pt;color:#b8c2ba;font-weight:300}
+
+  /* prévia */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm;margin-top:8mm}
+  .trio figure figcaption{text-align:center;margin-top:5mm;font-size:9.5pt;color:var(--muted)}
+  .trio figure figcaption b{display:block;font-family:"Cormorant Garamond",serif;font-size:14pt;color:var(--ink);font-weight:600}
+  .desk{margin-top:9mm;border-radius:2.5mm;overflow:hidden;border:1px solid var(--line);box-shadow:0 4mm 12mm rgba(0,0,0,.12)}
+  .desk .bar{height:6mm;background:#e8e3dc;display:flex;gap:1.5mm;align-items:center;padding:0 3mm}
+  .desk .bar i{width:2.2mm;height:2.2mm;border-radius:50%;background:#cbc2b7}
+  .desk img{display:block;width:100%;height:88mm;object-fit:cover;object-position:top}
+  .note{margin-top:6mm;font-size:8.8pt;color:var(--muted);font-style:italic}
+
+  /* incluso */
+  .two{display:grid;grid-template-columns:52mm 1fr;gap:10mm;margin-top:8mm;align-items:start}
+  .two .phone{height:106mm}
+  .two .phone img{height:100%;object-fit:cover;object-position:top}
+  .list{list-style:none}
+  .list li{display:flex;gap:4mm;padding:2.6mm 0;border-bottom:1px solid var(--line)}
+  .list li:last-child{border-bottom:0}
+  .list li .ck{flex:none;width:7mm;height:7mm;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-size:9pt;margin-top:.5mm}
+  .list b{display:block;font-weight:500;font-size:11pt}
+  .list span{font-size:9.5pt;color:var(--muted);line-height:1.5}
+
+  /* etapas */
+  .steps{margin-top:8mm;display:grid;gap:4mm}
+  .step{display:grid;grid-template-columns:14mm 1fr;gap:5mm;align-items:start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:3mm;padding:6mm}
+  .step .n{width:12mm;height:12mm;border-radius:50%;border:1px solid var(--gold2);color:var(--gold2);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:16pt}
+  .step h3{font-size:16pt;color:#fff;margin-bottom:1.5mm}
+  .step p{font-size:10pt;color:#bdb3a8;font-weight:300;line-height:1.55}
+  .dark h2{color:#fff}
+  .dark p.lead{color:#bdb3a8}
+
+  /* fechamento */
+  .close{background:radial-gradient(ellipse at 90% 30%,rgba(76,110,80,.5),transparent 55%),linear-gradient(165deg,#20201a,#0f0e0b);color:#fff;display:flex;flex-direction:column;justify-content:center}
+  .close h2{font-size:42pt;font-weight:500;color:#fff}
+  .close p.lead{color:#cfc6bb}
+  .price{margin-top:12mm;background:var(--beige);color:var(--ink);border-radius:3mm;padding:9mm 10mm;display:flex;justify-content:space-between;align-items:center;gap:8mm}
+  .price small{font-size:8pt;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);display:block}
+  .price b{font-family:"Cormorant Garamond",serif;font-size:34pt;font-weight:600;color:var(--ink);line-height:1.1}
+  .price .det{font-size:9.5pt;color:var(--muted)}
+  .price .pz{text-align:right}
+  .price .pz b{font-size:20pt}
+  .cta{margin-top:10mm;display:flex;align-items:center;gap:5mm;background:var(--whats);color:#fff;border-radius:99px;padding:5mm 8mm;font-size:12.5pt;font-weight:500;align-self:flex-start}
+  .contacts{margin-top:10mm;display:grid;gap:3mm;font-size:11pt;color:#e7dfd5}
+  .contacts .who{font-family:"Cormorant Garamond",serif;font-size:18pt;color:#fff}
+  .link{margin-top:8mm;font-size:10pt;color:#cfc6bb}
+  .link b{color:var(--gold2);font-weight:500}
+  [data-hide]{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- 1. CAPA -->
+<section class="page cover">
+  <div class="top">
+    <div class="logo"><img src="../logo.png" alt="" onerror="this.onerror=null;this.src='../logo.svg'"></div>
+    <span class="tag">Proposta exclusiva</span>
+  </div>
+  <h1>Um site à altura<br>do <em>sorriso</em> que<br>vocês entregam.</h1>
+  <p>Proposta de página de apresentação para a <b style="font-weight:500">Clínica Seu Sorriso</b>, em Caruaru-PE, feita para transformar quem conhece a clínica em pacientes agendados pelo WhatsApp.</p>
+  <div class="phones">
+    <div class="phone p1"><img src="img/m-servicos.jpg" alt=""></div>
+    <div class="phone p2"><img src="img/m-hero.jpg" alt=""></div>
+    <div class="phone p3"><img src="img/m-galeria.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- 2. OPORTUNIDADE -->
+<section class="page">
+  <span class="eyebrow">A oportunidade</span>
+  <h2>O Instagram atrai.<br>O site convence e agenda.</h2>
+  <p class="lead">A Clínica Seu Sorriso já tem uma comunidade de mais de 3.800 seguidores. A página de apresentação dá a essas pessoas, e a quem procura um dentista em Caruaru no Google, um endereço profissional que apresenta a clínica e leva direto para o agendamento.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">🔗</div><h3>Link oficial na bio</h3><p>Um único link no Instagram que apresenta a clínica, as especialidades e o responsável técnico de forma organizada.</p></div>
+    <div class="card"><div class="ic">💬</div><h3>Agendamento em 1 clique</h3><p>Todos os botões abrem o WhatsApp da clínica com uma mensagem pronta: o paciente só precisa enviar.</p></div>
+    <div class="card"><div class="ic">🔎</div><h3>Encontrada no Google</h3><p>Página preparada para buscas como “implante dentário em Caruaru” ou “dentista em Caruaru”.</p></div>
+    <div class="card"><div class="ic">🛡️</div><h3>Mais confiança</h3><p>CRO, EPAO e responsável técnico em destaque. Quem vai fazer um tratamento quer segurança antes de marcar.</p></div>
+  </div>
+  <div class="quote">
+    <div style="font-size:26pt">🦷</div>
+    <div><b>Quem chega pelo site já chega decidido.</b><small>A página faz a apresentação, e a conversa no WhatsApp começa pelo agendamento.</small></div>
+  </div>
+  <div class="num"><span>Clínica Seu Sorriso · Proposta de site</span><span>02</span></div>
+</section>
+
+<!-- 3. PRÉVIA -->
+<section class="page">
+  <span class="eyebrow">Prévia da página</span>
+  <h2>Pensada primeiro<br>para o celular</h2>
+  <p class="lead">A maioria dos pacientes vai abrir a página pelo celular, a partir do Instagram ou do WhatsApp. Por isso cada seção foi desenhada para a tela do celular e depois adaptada para o computador.</p>
+  <div class="trio">
+    <figure><div class="phone"><img src="img/m-hero.jpg" alt=""></div><figcaption><b>Apresentação</b>Mensagem forte e botão de agendamento logo de cara</figcaption></figure>
+    <figure><div class="phone"><img src="img/m-servicos.jpg" alt=""></div><figcaption><b>Especialidades</b>Implantes, estética, ortodontia e mais</figcaption></figure>
+    <figure><div class="phone"><img src="img/m-galeria.jpg" alt=""></div><figcaption><b>Conheça a clínica</b>Galeria de fotos para arrastar com o dedo</figcaption></figure>
+  </div>
+  <div class="num"><span>Clínica Seu Sorriso · Proposta de site</span><span>03</span></div>
+</section>
+
+<!-- 4. PRÉVIA COMPUTADOR + INCLUSO -->
+<section class="page">
+  <span class="eyebrow">Também no computador</span>
+  <h2>Elegante em qualquer tela</h2>
+  <div class="desk"><div class="bar"><i></i><i></i><i></i></div><img src="img/d-hero.jpg" alt=""></div>
+  <div class="two">
+    <div class="phone"><img src="img/m-sobre.jpg" alt=""></div>
+    <ul class="list">
+      <li><span class="ck">✓</span><div><b>Botão fixo do WhatsApp</b><span>Acompanha o paciente enquanto ele rola a página.</span></div></li>
+      <li><span class="ck">✓</span><div><b>Mensagem de agendamento pronta</b><span>“Olá! Vim pelo site da Clínica Seu Sorriso e gostaria de agendar uma avaliação.”</span></div></li>
+      <li><span class="ck">✓</span><div><b>Logo, fotos e cores da clínica</b><span>Identidade visual aplicada em toda a página.</span></div></li>
+      <li><span class="ck">✓</span><div><b>Responsável técnico em destaque</b><span>Dr. Djeferson Andrade · CRO/PE 10564 · EPAO/PE 1051.</span></div></li>
+      <li><span class="ck">✓</span><div><b>Rápida e leve</b><span>Abre em segundos, mesmo no 4G.</span></div></li>
+      <li><span class="ck">✓</span><div><b>Ligada ao Instagram</b><span>Link para o @clinicaseusorriso e pronta para a bio.</span></div></li>
+    </ul>
+  </div>
+  <p class="note">* Prévia ilustrativa. Na versão final entram o logo oficial e as fotos reais da clínica (recepção, consultórios e resultados).</p>
+  <div class="num"><span>Clínica Seu Sorriso · Proposta de site</span><span>04</span></div>
+</section>
+
+<!-- 5. COMO FUNCIONA -->
+<section class="page dark">
+  <span class="eyebrow">Como funciona</span>
+  <h2>Simples para a clínica,<br>do início ao fim</h2>
+  <p class="lead">Vocês continuam focados nos pacientes. Nós cuidamos de toda a parte técnica.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div><h3>Aprovação da proposta</h3><p>Vocês aprovam o modelo apresentado nesta proposta.</p></div></div>
+    <div class="step"><div class="n">2</div><div><h3>Envio dos materiais</h3><p>Logo, fotos da clínica, número do WhatsApp e, se quiserem, fotos de resultados e depoimentos de pacientes.</p></div></div>
+    <div class="step"><div class="n">3</div><div><h3>Personalização e revisão</h3><p>Aplicamos tudo na página e enviamos o link para vocês aprovarem. Ajustes inclusos.</p></div></div>
+    <div class="step"><div class="n">4</div><div><h3>Página no ar</h3><p>Publicamos a página, conectamos o domínio (se tiverem) e entregamos o link pronto para a bio do Instagram.</p></div></div>
+  </div>
+  <div class="num"><span>Clínica Seu Sorriso · Proposta de site</span><span>05</span></div>
+</section>
+
+<!-- 6. FECHAMENTO -->
+<section class="page close">
+  <span class="eyebrow">Próximo passo</span>
+  <h2>Vamos colocar o<br>Seu Sorriso no ar?</h2>
+  <p class="lead">Respondam esta mensagem para aprovar a proposta e iniciamos a personalização da página da clínica.</p>
+  <div class="price" id="price">
+    <div><small>Investimento</small><b id="preco"></b><div class="det" id="precoDetalhe"></div></div>
+    <div class="pz" id="pzBox"><small>Prazo de entrega</small><b id="prazo"></b></div>
+  </div>
+  <div class="link" id="linkBox">Veja a prévia funcionando: <b id="linkPrevia"></b></div>
+  <div class="contacts" id="contacts">
+    <div class="who" id="seuNome"></div>
+    <div id="whatsapp"></div>
+    <div id="email"></div>
+    <div id="instagram"></div>
+  </div>
+  <div class="cta"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Responda e aprove pelo WhatsApp</div>
+  <div class="num"><span>Clínica Seu Sorriso · Proposta de site</span><span>06</span></div>
+</section>
+
+<script>
+  const c = window.CONFIG, $ = (id) => document.getElementById(id);
+  const set = (id, v, pre = '') => { if (v) $(id).textContent = pre + v; else $(id).setAttribute('data-hide', ''); };
+  set('preco', c.preco); set('precoDetalhe', c.precoDetalhe); set('prazo', c.prazo);
+  if (!c.prazo) $('pzBox').setAttribute('data-hide', '');
+  if (!c.preco && !c.prazo) $('price').setAttribute('data-hide', '');
+  if (!c.preco) { $('preco').parentElement.setAttribute('data-hide', ''); }
+  set('linkPrevia', c.linkPrevia); if (!c.linkPrevia) $('linkBox').setAttribute('data-hide', '');
+  set('seuNome', c.seuNome); set('whatsapp', c.whatsapp, '💬  '); set('email', c.email, '✉️  '); set('instagram', c.instagram, '📷  ');
+  if (!c.seuNome && !c.whatsapp && !c.email && !c.instagram) $('contacts').setAttribute('data-hide', '');
+</script>
+</body>
+</html>
