@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const root = path.join(__dirname, '..');
-const sites = ['padaria','barbearia','loja-roupas','hamburgueria'];
+const sites = ['padaria','barbearia','loja-roupas','hamburgueria','clinica-odontologica'];
 (async () => {
   const b = await chromium.launch();
   for (const s of sites) {

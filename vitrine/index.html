@@ -26,6 +26,7 @@
   .shot .bar i{width:9px;height:9px;border-radius:50%;background:#cfcfd6}
   .shot img{position:absolute;top:26px;left:0;width:100%;height:auto;transition:transform 4s ease}
   .card:hover .shot img{transform:translateY(calc(-100% + 300px))}
+  .card.wide:hover .shot img{transform:translateY(calc(-100% + 420px))}
   .info{padding:22px 24px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
   .info h2{font-size:1.25rem}
   .info p{color:var(--muted);font-size:.92rem}
@@ -38,6 +39,9 @@
   .step h3{font-size:1.1rem;margin-bottom:6px}
   .step p{color:#b7b6bf;font-size:.92rem}
   footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:.85rem}
+  .card.wide{grid-column:1/-1}
+  .card.wide .shot{aspect-ratio:21/9}
+  .new{display:inline-block;background:#e7e5ff;color:var(--brand);font-size:.65rem;font-weight:800;padding:3px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
   @media (max-width:860px){.grid,.steps{grid-template-columns:1fr}.info{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
@@ -49,6 +53,10 @@
 </header>
 
 <main class="wrap grid">
+  <a class="card wide" href="clinica-odontologica/">
+    <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/clinica-odontologica-full.jpg" alt="Prévia do modelo Clínica Odontológica" loading="lazy"></div>
+    <div class="info"><div><h2>Clínica Odontológica <span class="new">NOVO</span></h2><p>Site completo e sofisticado: especialidades, galeria, depoimentos, dúvidas e agendamento pelo WhatsApp.</p></div><span class="go">Ver modelo →</span></div>
+  </a>
   <a class="card" href="padaria/">
     <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/padaria-full.jpg" alt="Prévia do modelo Padaria" loading="lazy"></div>
     <div class="info"><div><h2>Padaria &amp; Confeitaria</h2><p>Cardápio, encomendas pelo WhatsApp e horários.</p></div><span class="go">Ver modelo →</span></div>
