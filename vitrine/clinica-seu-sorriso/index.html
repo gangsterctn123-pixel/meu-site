@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica Seu Sorriso | Implantes e Estética Dental em Caruaru</title>
+<meta name="description" content="Atendimento odontológico de excelência em Caruaru-PE. Implantes, estética dental e todas as especialidades. Agende sua avaliação pelo WhatsApp.">
+<meta name="theme-color" content="#16120f">
+<meta property="og:title" content="Clínica Seu Sorriso | Caruaru">
+<meta property="og:description" content="Implantes, estética e todas as especialidades odontológicas. Agende pelo WhatsApp.">
+<link rel="icon" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#16120f;      /* fundo escuro do topo */
+    --forest:#1b2620;    /* verde escuro da galeria */
+    --beige:#f2eee8;     /* fundo claro */
+    --gold:#b08d67;      /* botões */
+    --gold-2:#c9a57f;
+    --ink:#2a2622;
+    --muted:#7b736b;
+    --line:#ddd5cb;
+    --whats:#25d366;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Jost,system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--beige);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
+
+  /* ---------- botões ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--gold);color:#fff;
+    font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:17px 26px;border-radius:3px;
+    transition:background .25s,transform .25s}
+  .btn:hover{background:var(--gold-2);transform:translateY(-2px)}
+  .btn svg{flex:none}
+  .btn-out{background:transparent;border:1px solid rgba(255,255,255,.55);padding:11px 16px;font-size:.7rem}
+  .btn-out:hover{background:rgba(255,255,255,.1)}
+
+  /* ---------- topo ---------- */
+  header{position:absolute;top:0;left:0;right:0;z-index:20}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand .logo{width:54px;height:54px;border-radius:50%;background:#fff;overflow:hidden;flex:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+  .brand .logo img{width:100%;height:100%;object-fit:contain}
+  .brand b{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600;letter-spacing:.06em;line-height:1;display:block}
+  .brand small{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
+  .menu{display:none;gap:34px;list-style:none}
+  .menu a{color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+  .menu a:hover{opacity:1}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 78% 30%,rgba(214,170,120,.35),transparent 55%),
+      radial-gradient(ellipse at 20% 90%,rgba(176,141,103,.18),transparent 50%),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px),
+      linear-gradient(160deg,#3a2c21 0%,#1d1612 55%,#110d0a 100%)}
+  .hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,13,10,.55) 0%,rgba(17,13,10,.25) 35%,rgba(17,13,10,.85) 100%)}
+  .hero .tooth-bg{position:absolute;right:-60px;top:110px;width:320px;opacity:.09}
+  .hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:56px}
+  .hero .kicker{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
+  .hero h1{font-size:clamp(3.1rem,13vw,6rem);font-weight:500;letter-spacing:-.01em}
+  .hero p{font-size:1.05rem;font-weight:300;opacity:.9;max-width:430px;margin:20px 0 30px}
+  .hero .btn{width:100%}
+  .scroll{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+  .scroll span{width:38px;height:38px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(5px)}}
+
+  /* ---------- faixa de confiança ---------- */
+  .trust{background:var(--dark);color:#e9e1d7;border-top:1px solid rgba(255,255,255,.08)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;padding-top:22px;padding-bottom:22px}
+  .trust b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--gold-2);line-height:1.1}
+  .trust small{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+  .trust div+div{border-left:1px solid rgba(255,255,255,.12)}
+
+  /* ---------- títulos de seção ---------- */
+  section{padding:72px 0}
+  .eyebrow{display:block;text-align:center;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow::after{content:"";display:block;width:28px;height:1px;background:var(--gold);margin:12px auto 0}
+  .sec-title{text-align:center;font-size:clamp(2.1rem,8vw,3rem);margin:14px 0 44px}
+
+  /* ---------- especialidades ---------- */
+  .services{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .svc{text-align:center;padding:26px 12px}
+  .svc:nth-child(odd){border-right:1px solid var(--line)}
+  .svc:nth-child(-n+4){border-bottom:1px solid var(--line)}
+  .svc .ic{width:66px;height:66px;margin:0 auto 14px;border:1px solid #bfb3a5;border-radius:50%;display:grid;place-items:center;color:#4a3f35}
+  .svc h3{font-size:1.3rem;margin-bottom:6px}
+  .svc p{font-size:.85rem;color:var(--muted);line-height:1.45}
+  .all{text-align:center;margin-top:34px;font-size:.95rem;color:var(--muted)}
+  .all b{color:var(--ink);font-weight:500}
+
+  /* ---------- galeria ---------- */
+  .gallery{background:var(--forest);color:#fff}
+  .gallery .eyebrow{color:#a7b1a9}
+  .gallery .sec-title{color:#fff}
+  .shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;margin:0 -20px;scrollbar-width:none}
+  .shots::-webkit-scrollbar{display:none}
+  .shot{flex:0 0 78%;scroll-snap-align:center;aspect-ratio:4/5;border-radius:8px;overflow:hidden;position:relative;
+    background:linear-gradient(160deg,#5a4a3a,#2b231c)}
+  .shot:nth-child(2){background:linear-gradient(160deg,#4d5a4c,#222a22)}
+  .shot:nth-child(3){background:linear-gradient(160deg,#6b5a49,#30271f)}
+  .shot:nth-child(4){background:linear-gradient(160deg,#7d6a5a,#3a2f27)}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .shot .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.35)}
+  .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-family:"Cormorant Garamond",serif;font-size:1.25rem;
+    background:linear-gradient(transparent,rgba(0,0,0,.6))}
+  .swipe{text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#a7b1a9;margin-top:16px}
+  .insta{display:flex;justify-content:center;margin-top:30px}
+  .insta a{display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:4px;font-size:.9rem}
+
+  /* ---------- sobre / responsável ---------- */
+  .about .card{background:#fff;border-radius:10px;padding:34px 24px;text-align:center;box-shadow:0 18px 40px rgba(42,38,34,.08)}
+  .about .avatar{width:96px;height:96px;margin:0 auto 18px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--line),0 8px 20px rgba(0,0,0,.08);overflow:hidden}
+  .about .avatar img{width:100%;height:100%;object-fit:contain}
+  .about h3{font-size:1.9rem}
+  .about .role{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:6px 0 16px}
+  .about p{color:var(--muted);font-size:.95rem;max-width:520px;margin:0 auto}
+  .about ul{list-style:none;display:grid;gap:10px;margin:24px auto 0;max-width:340px;text-align:left}
+  .about li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem}
+  .about li svg{flex:none;margin-top:4px;color:var(--gold)}
+  .reg{margin-top:22px;font-size:.75rem;color:var(--muted);letter-spacing:.06em}
+
+  /* ---------- chamada final ---------- */
+  .final{position:relative;overflow:hidden;color:#fff;padding:90px 0 100px;
+    background:radial-gradient(ellipse at 90% 40%,rgba(76,110,80,.55),transparent 55%),linear-gradient(160deg,#20201a,#12110e)}
+  .final .leaf{position:absolute;right:-70px;bottom:-40px;width:300px;opacity:.22}
+  .final .wrap{position:relative}
+  .final .mini{width:44px;height:44px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;margin-bottom:22px}
+  .final h2{font-size:clamp(2.6rem,11vw,4rem);font-weight:500}
+  .final p{font-weight:300;opacity:.85;margin:16px 0 30px;max-width:380px}
+  .final .btn{width:100%}
+  .final .local{display:flex;gap:10px;align-items:center;margin-top:26px;font-size:.88rem;opacity:.8}
+
+  footer{background:#0e0c0a;color:#9c9389;text-align:center;font-size:.78rem;padding:28px 20px 110px;line-height:1.8}
+  footer a{color:#d8cfc4}
+
+  /* ---------- barra fixa do WhatsApp (celular) ---------- */
+  .sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--whats);color:#fff;font-weight:500;font-size:1rem;padding:15px 18px;border-radius:999px;
+    box-shadow:0 10px 28px rgba(0,0,0,.28);transform:translateY(140%);transition:transform .35s ease;padding-bottom:calc(15px + env(safe-area-inset-bottom)/2)}
+  .sticky.show{transform:none}
+
+  /* ---------- animação de entrada ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.scroll span{animation:none}}
+
+  /* ---------- tablet / desktop ---------- */
+  @media (min-width:760px){
+    .menu{display:flex}
+    .hero{align-items:center}
+    .hero .wrap{padding-bottom:80px}
+    .hero .btn,.final .btn{width:auto}
+    .hero .tooth-bg{right:6%;top:22%;width:420px}
+    .services{grid-template-columns:repeat(3,1fr)}
+    .svc{padding:30px 22px}
+    .svc:nth-child(odd){border-right:0}
+    .svc:not(:nth-child(3n)){border-right:1px solid var(--line)}
+    .svc:nth-child(-n+4){border-bottom:0}
+    .svc:nth-child(-n+3){border-bottom:1px solid var(--line)}
+    .shots{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;margin:0;padding:0}
+    .shot{aspect-ratio:4/5}
+    .swipe{display:none}
+    .about .card{padding:50px}
+    .final .leaf{width:520px;right:-40px}
+    .sticky{left:auto;right:24px;width:auto;padding:15px 24px}
+    footer{padding-bottom:30px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="logo"><img src="logo.png" alt="Logo Clínica Seu Sorriso" onerror="this.onerror=null;this.src='logo.svg'"></span>
+      <span><b>SEU SORRISO</b><small>Clínica Odontológica</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#clinica">A Clínica</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+    </ul>
+    <a class="btn btn-out js-whats" href="#">Agendar</a>
+  </div>
+</header>
+
+<!-- HERO: para usar uma foto real, coloque o arquivo em fotos/hero.jpg -->
+<section class="hero" style="padding:0">
+  <img class="photo" src="fotos/hero.jpg" alt="" onerror="this.remove()">
+  <svg class="tooth-bg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width=".6" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 .8 3.5 1.3 5.3.6 2.3.8 5.2 1.7 7.3.5 1.1 1.8 1.1 2.2-.1l1.1-4c.3-1 .9-1.5 1.7-1.5s1.4.5 1.7 1.5l1.1 4c.4 1.2 1.7 1.2 2.2.1.9-2.1 1.1-5 1.7-7.3.5-1.8 1.3-3.3 1.3-5.3C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg>
+  <div class="wrap">
+    <div class="kicker">📍 Caruaru · PE</div>
+    <h1>Sorrisos que<br>duram a vida<br>toda.</h1>
+    <p>Atendimento odontológico de excelência, com cuidado humano e tecnologia, para um sorriso mais saudável e bonito.</p>
+    <a class="btn js-whats" href="#">
+      Agendar avaliação
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
+    </a>
+    <a class="scroll" href="#especialidades"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></span>Role para conhecer</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>+3.800</b><small>Seguidores</small></div>
+    <div><b>Todas</b><small>Especialidades</small></div>
+    <div><b>CRO/PE</b><small>Registrada</small></div>
+  </div>
+</div>
+
+<section id="especialidades">
+  <div class="wrap">
+    <span class="eyebrow reveal">Cuidado completo</span>
+    <h2 class="sec-title reveal">Nossas Especialidades</h2>
+    <div class="services reveal">
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 .8 3.5 1.3 5.3.6 2.3.8 5.2 1.7 7.3.5 1.1 1.8 1.1 2.2-.1l1.1-4c.3-1 .9-1.5 1.7-1.5s1.4.5 1.7 1.5l1.1 4c.4 1.2 1.7 1.2 2.2-.1.9-2.1 1.1-5 1.7-7.3.5-1.8 1.3-3.3 1.3-5.3C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div>
+        <h3>Clínica Geral</h3><p>Prevenção, limpeza e cuidado completo</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 4c0-1 1-2 2.5-2h5C16 2 17 3 17 4c0 1.7-1.5 3-1.8 4H8.8C8.5 7 7 5.7 7 4z"/><path d="M8.5 10h7M9 13h6M9.5 16h5M10 19h4M12 8v14"/></svg></div>
+        <h3>Implantes</h3><p>Solução fixa para dentes perdidos</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 5c-2 0-3.3 1.7-3.3 3.8 0 1.7.6 2.9 1 4.4.5 1.9.7 4.3 1.4 6 .4.9 1.5.9 1.8-.1l.9-3.3c.3-.8.8-1.2 1.4-1.2s1.1.4 1.4 1.2l.9 3.3c.3 1 1.4 1 1.8.1.7-1.7.9-4.1 1.4-6 .4-1.5 1-2.7 1-4.4C16.7 6.7 15.4 5 13.4 5c-1.6 0-2.4.8-4.1.8S7.6 5 6 5z"/><path d="M19 2v4M17 4h4M20 9v2M19 10h2"/></svg></div>
+        <h3>Estética Dental</h3><p>Lentes, facetas e clareamento</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="8" width="5" height="8" rx="1.5"/><rect x="9.5" y="8" width="5" height="8" rx="1.5"/><rect x="17" y="8" width="5" height="8" rx="1.5"/><path d="M1 12h22"/></svg></div>
+        <h3>Ortodontia</h3><p>Aparelhos e alinhadores</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9c3 4 15 4 18 0"/><path d="M5 11.5c2 3.5 12 3.5 14 0"/><path d="M8 13v1.5M12 13.6V15M16 13v1.5"/></svg></div>
+        <h3>Próteses</h3><p>Devolvem função e estética</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 21s-7-4.4-7-10.5C5 7 7.2 5 9.5 5c1.2 0 2 .5 2.5 1.2.5-.7 1.3-1.2 2.5-1.2C16.8 5 19 7 19 10.5 19 16.6 12 21 12 21z"/></svg></div>
+        <h3>Atendimento Humanizado</h3><p>Conforto do início ao fim</p>
+      </div>
+    </div>
+    <p class="all reveal">🦷 <b>Atendemos todas as especialidades.</b> Pergunte pelo seu tratamento.</p>
+  </div>
+</section>
+
+<!-- GALERIA: coloque suas fotos em fotos/foto-1.jpg ... fotos/foto-4.jpg -->
+<section class="gallery" id="clinica">
+  <div class="wrap">
+    <span class="eyebrow reveal">Conheça a clínica</span>
+    <h2 class="sec-title reveal">Sorrisos reais. Resultados reais.</h2>
+    <div class="shots reveal">
+      <figure class="shot"><div class="ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg></div><img src="fotos/foto-1.jpg" alt="Recepção da clínica" loading="lazy" onerror="this.remove()"><figcaption>Recepção</figcaption></figure>
+      <figure class="shot"><div class="ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg></div><img src="fotos/foto-2.jpg" alt="Sala de espera" loading="lazy" onerror="this.remove()"><figcaption>Sala de espera</figcaption></figure>
+      <figure class="shot"><div class="ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg></div><img src="fotos/foto-3.jpg" alt="Consultório" loading="lazy" onerror="this.remove()"><figcaption>Consultório</figcaption></figure>
+      <figure class="shot"><div class="ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg></div><img src="fotos/foto-4.jpg" alt="Resultado de tratamento" loading="lazy" onerror="this.remove()"><figcaption>Resultados</figcaption></figure>
+    </div>
+    <p class="swipe">← arraste para ver mais →</p>
+    <div class="insta"><a href="https://www.instagram.com/clinicaseusorriso/" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+      Veja mais no @clinicaseusorriso</a></div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <span class="eyebrow reveal">Quem cuida de você</span>
+    <h2 class="sec-title reveal">Excelência em cada detalhe</h2>
+    <div class="card reveal">
+      <div class="avatar"><img src="logo.png" alt="" onerror="this.onerror=null;this.src='logo.svg'"></div>
+      <h3>Dr. Djeferson Andrade</h3>
+      <div class="role">Responsável Técnico · CRO/PE 10564</div>
+      <p>Na Clínica Seu Sorriso, cada paciente é atendido com atenção, carinho e técnica, do check-up de rotina aos tratamentos mais completos.</p>
+      <ul>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Implantes e reabilitação oral</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Estética e harmonia do sorriso</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Todas as especialidades em um só lugar</li>
+      </ul>
+      <div class="reg">EPAO/PE 1051</div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <svg class="leaf" viewBox="0 0 200 200" fill="#6f9a72" aria-hidden="true"><path d="M190 10C110 10 40 50 20 150c40-10 70-30 95-60-20 35-45 60-80 80 90 10 155-60 155-160z"/><path d="M150 90c-40 0-80 30-90 100 50-10 90-50 90-100z" opacity=".7"/></svg>
+  <div class="wrap reveal">
+    <div class="mini"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 .8 3.5 1.3 5.3.6 2.3.8 5.2 1.7 7.3.5 1.1 1.8 1.1 2.2-.1l1.1-4c.3-1 .9-1.5 1.7-1.5s1.4.5 1.7 1.5l1.1 4c.4 1.2 1.7 1.2 2.2-.1.9-2.1 1.1-5 1.7-7.3.5-1.8 1.3-3.3 1.3-5.3C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div>
+    <h2>Seu sorriso,<br>nossa paixão.</h2>
+    <p>Agende sua avaliação pelo WhatsApp e venha conhecer a clínica em um ambiente calmo e acolhedor.</p>
+    <a class="btn js-whats" href="#">
+      Agendar pelo WhatsApp
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
+    </a>
+    <div class="local">📍 Caruaru · Pernambuco</div>
+  </div>
+</section>
+
+<footer>
+  <b style="color:#d8cfc4">Clínica Seu Sorriso</b> · Implantes · Estética · Caruaru-PE<br>
+  RT: Dr. Djeferson Andrade · CRO/PE 10564 · EPAO/PE 1051<br>
+  <a href="https://www.instagram.com/clinicaseusorriso/" target="_blank" rel="noopener">@clinicaseusorriso</a>
+</footer>
+
+<a class="sticky js-whats" href="#" aria-label="Agendar pelo WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+  Agendar pelo WhatsApp
+</a>
+
+<script>
+  // ====== CONFIGURAÇÃO DO WHATSAPP ======
+  // Coloque o número com DDI 55 + DDD + número, só dígitos. Ex.: "5581999998888"
+  const WHATSAPP = "5581900000000";
+  const MENSAGEM = "Olá! Vim pelo site da Clínica Seu Sorriso e gostaria de agendar uma avaliação.";
+  // ======================================
+  const link = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MENSAGEM);
+  document.querySelectorAll(".js-whats").forEach(a => { a.href = link; a.target = "_blank"; a.rel = "noopener"; });
+
+  // Barra fixa do WhatsApp aparece depois que a pessoa rola a página
+  const sticky = document.querySelector(".sticky");
+  const onScroll = () => sticky.classList.toggle("show", window.scrollY > window.innerHeight * 0.6);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Animação de entrada
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
