@@ -1,0 +1,6 @@
+/* Selo "Modelo de demonstração" — exibido só na vitrine. Remova ao entregar ao cliente. */
+.demo-pill{position:fixed;left:16px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:8px;
+  background:#111;color:#fff;font:600 13px/1 system-ui,sans-serif;padding:10px 14px;border-radius:999px;
+  text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:.92}
+.demo-pill:hover{opacity:1}
+.demo-pill b{background:#ffd23f;color:#111;padding:3px 7px;border-radius:999px;font-size:11px;letter-spacing:.04em}

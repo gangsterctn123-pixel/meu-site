@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pão &amp; Afeto — Padaria Artesanal</title>
+<meta name="description" content="Padaria artesanal com pães de fermentação natural, bolos caseiros e café especial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/demo.css">
+<style>
+  :root{--cream:#fbf5ec;--paper:#f3e7d3;--brown:#5b3a24;--dark:#2e1d12;--accent:#c8772e;--green:#25d366}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Nunito,system-ui,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+  h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.15}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(251,245,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid #eadcc6}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:1.5rem;text-decoration:none;color:var(--brown)}
+  .logo span{color:var(--accent)}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav ul a{text-decoration:none;font-weight:600;color:var(--brown)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+  .btn-main{background:var(--accent);color:#fff}
+  .btn-ghost{border:2px solid var(--brown);color:var(--brown)}
+  .hero{padding:72px 0 88px;background:radial-gradient(circle at 85% 20%,#f6dcb8 0,transparent 45%),var(--cream)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .tag{display:inline-block;background:var(--paper);color:var(--brown);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);color:var(--brown)}
+  .hero h1 em{color:var(--accent)}
+  .hero p{font-size:1.15rem;margin:20px 0 32px;max-width:520px;color:#6b4e38}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-art{aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#e9b77a,#b8692b);display:grid;place-items:center;font-size:clamp(7rem,16vw,11rem);box-shadow:inset 0 -20px 60px rgba(0,0,0,.18),0 30px 60px rgba(91,58,36,.25);position:relative}
+  .hero-art .badge{position:absolute;bottom:8%;left:-4%;background:#fff;border-radius:18px;padding:12px 18px;font-size:.95rem;box-shadow:0 10px 30px rgba(0,0,0,.12);font-weight:800;color:var(--brown)}
+  .hero-art .badge small{display:block;font-weight:600;color:#8a6a50}
+  section{padding:88px 0}
+  .title{text-align:center;max-width:620px;margin:0 auto 48px}
+  .title h2{font-size:clamp(2rem,4vw,2.7rem);color:var(--brown)}
+  .title p{color:#7a5c44;margin-top:10px}
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .feat{background:#fff;border-radius:22px;padding:30px;border:1px solid #efe2cd}
+  .feat .ic{font-size:2.2rem}
+  .feat h3{margin:12px 0 6px;font-size:1.3rem}
+  .menu{background:var(--paper)}
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .prod{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 20px rgba(91,58,36,.08)}
+  .prod .img{aspect-ratio:4/3;display:grid;place-items:center;font-size:4.4rem}
+  .prod .body{padding:18px 20px 22px}
+  .prod h3{font-size:1.15rem}
+  .prod p{font-size:.92rem;color:#7a5c44;margin:4px 0 10px}
+  .price{font-weight:800;color:var(--accent);font-size:1.15rem}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .quote{background:#fff;border-radius:22px;padding:28px;border:1px solid #efe2cd}
+  .stars{color:#e3a008;letter-spacing:2px}
+  .quote p{margin:12px 0 16px;font-style:italic}
+  .quote b{color:var(--brown)}
+  .visit{background:var(--brown);color:#f6e9d6}
+  .visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit h2{font-size:clamp(2rem,4vw,2.7rem);color:#fff}
+  .visit ul{list-style:none;margin:22px 0 30px}
+  .visit li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:16px}
+  .map{aspect-ratio:4/3;border-radius:22px;background:repeating-linear-gradient(45deg,#6d4a31 0 14px,#664429 14px 28px);display:grid;place-items:center;font-size:3.5rem;position:relative;overflow:hidden}
+  .map span{background:#fff;color:var(--brown);font-size:1rem;font-weight:800;padding:10px 16px;border-radius:12px;position:absolute;bottom:18px}
+  footer{background:var(--dark);color:#b9a28c;text-align:center;padding:28px 20px;font-size:.9rem}
+  .wa{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 10px 25px rgba(37,211,102,.45);z-index:20}
+  @media (max-width:900px){
+    .hero .wrap,.visit .wrap{grid-template-columns:1fr}
+    .hero-art{max-width:340px;margin:0 auto}
+    .feats,.quote-grid{grid-template-columns:1fr}
+    .products{grid-template-columns:repeat(2,1fr)}
+    .nav ul{display:none}
+  }
+  @media (max-width:520px){.products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Pão <span>&amp;</span> Afeto</a>
+    <ul><li><a href="#sobre">Sobre</a></li><li><a href="#cardapio">Cardápio</a></li><li><a href="#visite">Visite</a></li></ul>
+    <a class="btn btn-main" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Encomendar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Fermentação natural · desde 2012</span>
+      <h1>O cheirinho de pão quente que <em>abraça</em> o seu dia.</h1>
+      <p>Pães artesanais, bolos caseiros e café especial feitos todos os dias, com ingredientes simples e muito carinho.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Fazer encomenda pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div>
+    <div class="hero-art">🥐
+      <div class="badge">⭐ 4,9 no Google<small>+ de 800 avaliações</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="title"><h2>Feito à mão, do jeito certo</h2><p>Cada fornada sai no tempo dela, sem pressa e sem conservantes.</p></div>
+    <div class="feats">
+      <div class="feat"><div class="ic">🌾</div><h3>Farinha selecionada</h3><p>Trabalhamos com moinhos locais e fermento natural com mais de 10 anos de vida.</p></div>
+      <div class="feat"><div class="ic">🔥</div><h3>Fornadas o dia todo</h3><p>Pão quentinho às 7h, 11h e 16h. Chegou, levou fresquinho.</p></div>
+      <div class="feat"><div class="ic">🛵</div><h3>Entrega no bairro</h3><p>Café da manhã completo na sua porta. Peça até as 20h do dia anterior.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="cardapio">
+  <div class="wrap">
+    <div class="title"><h2>Os queridinhos da casa</h2><p>Uma amostra do que sai do nosso forno.</p></div>
+    <div class="products">
+      <div class="prod"><div class="img" style="background:#f6dfc0">🍞</div><div class="body"><h3>Pão de fermentação natural</h3><p>Casca crocante, miolo aerado. 800 g.</p><span class="price">R$ 24,90</span></div></div>
+      <div class="prod"><div class="img" style="background:#f3d6b0">🥐</div><div class="body"><h3>Croissant na manteiga</h3><p>Folhado com manteiga francesa.</p><span class="price">R$ 9,90</span></div></div>
+      <div class="prod"><div class="img" style="background:#eed2c0">🍰</div><div class="body"><h3>Bolo de cenoura</h3><p>Com cobertura de chocolate belga.</p><span class="price">R$ 39,90</span></div></div>
+      <div class="prod"><div class="img" style="background:#e8d5c2">☕</div><div class="body"><h3>Café especial</h3><p>Grãos do Sul de Minas, moídos na hora.</p><span class="price">R$ 7,50</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="title"><h2>Quem prova, volta</h2></div>
+    <div class="quote-grid">
+      <div class="quote"><div class="stars">★★★★★</div><p>“O melhor pão da cidade, sem exagero. Virou ritual de domingo aqui em casa.”</p><b>Mariana S.</b></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>“Encomendei o café da manhã para o aniversário da minha mãe. Chegou lindo e no horário.”</p><b>Rafael T.</b></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>“Atendimento carinhoso e o croissant é de outro mundo. Recomendo demais!”</p><b>Juliana P.</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visite">
+  <div class="wrap">
+    <div>
+      <h2>Venha tomar um café com a gente</h2>
+      <ul>
+        <li><span>Segunda a sexta</span><b>6h30 às 20h</b></li>
+        <li><span>Sábado</span><b>7h às 18h</b></li>
+        <li><span>Domingo</span><b>7h às 13h</b></li>
+        <li><span>Endereço</span><b>Rua das Flores, 123 · Centro</b></li>
+      </ul>
+      <a class="btn btn-main" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+    <div class="map">📍<span>Rua das Flores, 123</span></div>
+  </div>
+</section>
+
+<footer>© 2026 Pão &amp; Afeto Padaria Artesanal · Todos os direitos reservados</footer>
+<a class="wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script src="../shared/demo.js"></script>
+</body>
+</html>

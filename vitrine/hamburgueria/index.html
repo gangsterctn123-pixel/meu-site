@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasa Burger — Hamburgueria Artesanal</title>
+<meta name="description" content="Hambúrguer artesanal na brasa. Peça pelo WhatsApp ou venha para a casa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/demo.css">
+<style>
+  :root{--red:#e63a1e;--dark:#1a0f0a;--yellow:#ffc22b;--cream:#fff6e8;--muted:#7a6a5d;--green:#25d366}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Poppins,system-ui,sans-serif;background:var(--cream);color:var(--dark);line-height:1.55}
+  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.95}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:var(--dark);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:"Bebas Neue",sans-serif;font-size:2rem;text-decoration:none;letter-spacing:.04em}
+  .logo span{color:var(--yellow)}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav ul a{text-decoration:none;font-weight:600;font-size:.92rem}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:12px;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-3px) rotate(-1deg)}
+  .btn-y{background:var(--yellow);color:var(--dark);box-shadow:0 6px 0 #c48d00}
+  .btn-r{background:var(--red);color:#fff;box-shadow:0 6px 0 #a3220d}
+  .btn-o{border:2px solid #fff;color:#fff}
+  .hero{background:var(--red);color:#fff;padding:70px 0 100px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;background:var(--cream);clip-path:polygon(0 100%,100% 100%,100% 0,0 70%)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+  .chip{display:inline-block;background:var(--yellow);color:var(--dark);font-weight:800;font-size:.8rem;padding:6px 14px;border-radius:999px;transform:rotate(-2deg)}
+  .hero h1{font-size:clamp(4rem,10vw,7.5rem);margin:18px 0 12px}
+  .hero h1 span{color:var(--yellow)}
+  .hero p{font-size:1.12rem;max-width:460px;margin-bottom:30px;opacity:.95}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .burger{font-size:clamp(9rem,22vw,16rem);text-align:center;filter:drop-shadow(0 30px 30px rgba(0,0,0,.35));animation:float 3.5s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-14px) rotate(3deg)}}
+  .ticker{background:var(--dark);color:var(--yellow);font-family:"Bebas Neue",sans-serif;font-size:1.6rem;white-space:nowrap;overflow:hidden;padding:12px 0}
+  .ticker div{display:inline-block;animation:tick 22s linear infinite}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  section{padding:90px 0}
+  .title{text-align:center;margin-bottom:46px}
+  .title h2{font-size:clamp(3rem,7vw,4.6rem)}
+  .title h2 span{color:var(--red)}
+  .title p{color:var(--muted)}
+  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border-radius:24px;padding:24px;border:3px solid var(--dark);box-shadow:8px 8px 0 var(--dark);transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--dark)}
+  .card .em{font-size:5rem;text-align:center;background:var(--cream);border-radius:16px;padding:14px 0}
+  .card h3{font-size:2rem;margin:16px 0 6px}
+  .card p{color:var(--muted);font-size:.92rem;min-height:3em}
+  .card .row{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+  .card .pr{font-family:"Bebas Neue",sans-serif;font-size:2.1rem;color:var(--red)}
+  .card .add{background:var(--yellow);border:2px solid var(--dark);border-radius:10px;padding:8px 14px;font-weight:800;text-decoration:none;font-size:.85rem}
+  .hot{position:relative}
+  .hot::before{content:"🔥 MAIS PEDIDO";position:absolute;top:-14px;right:18px;background:var(--red);color:#fff;font-weight:800;font-size:.72rem;padding:5px 10px;border-radius:999px}
+  .combo{background:var(--dark);color:#fff}
+  .combo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .combo h2{font-size:clamp(3rem,7vw,5rem)}
+  .combo h2 span{color:var(--yellow)}
+  .combo p{color:#d6c7ba;margin:14px 0 26px}
+  .combo .big{font-size:clamp(7rem,16vw,11rem);text-align:center}
+  .combo .price{font-family:"Bebas Neue",sans-serif;font-size:3.4rem;color:var(--yellow);display:block;margin-bottom:20px}
+  .combo .price s{font-size:1.8rem;color:#8d7d70;margin-left:10px}
+  .info{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center}
+  .info div{background:#fff;border-radius:20px;padding:28px;border:2px solid #f1e2cc}
+  .info .ic{font-size:2.4rem}
+  .info h3{font-size:1.8rem;margin:8px 0 4px}
+  .info p{color:var(--muted)}
+  footer{background:var(--dark);color:#a8978a;text-align:center;padding:28px 20px;font-size:.85rem}
+  .wa{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 10px 25px rgba(37,211,102,.45);z-index:20}
+  @media (max-width:900px){
+    .hero .wrap,.combo .wrap{grid-template-columns:1fr}
+    .menu,.info{grid-template-columns:1fr}
+    .nav ul{display:none}
+    .burger{order:-1}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">BRASA<span>BURGER</span></a>
+    <ul><li><a href="#cardapio">Cardápio</a></li><li><a href="#combo">Promoção</a></li><li><a href="#onde">Onde estamos</a></li></ul>
+    <a class="btn btn-y" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Pedir agora</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="chip">🔥 Delivery em até 40 min</span>
+      <h1>Na brasa,<br><span>no capricho.</span></h1>
+      <p>Blend artesanal de 180 g, pão brioche selado na manteiga e molho da casa. Hambúrguer de verdade, do jeito que tem que ser.</p>
+      <div class="cta">
+        <a class="btn btn-y" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+        <a class="btn btn-o" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div>
+    <div class="burger" aria-hidden="true">🍔</div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div>★ BLEND ARTESANAL ★ PÃO BRIOCHE ★ BATATA RÚSTICA ★ MOLHO DA CASA ★ DELIVERY RÁPIDO ★ BLEND ARTESANAL ★ PÃO BRIOCHE ★ BATATA RÚSTICA ★ MOLHO DA CASA ★ DELIVERY RÁPIDO&nbsp;</div></div>
+
+<section id="cardapio">
+  <div class="wrap">
+    <div class="title"><h2>Nosso <span>cardápio</span></h2><p>Todos os lanches acompanham batata rústica.</p></div>
+    <div class="menu">
+      <div class="card"><div class="em">🍔</div><h3>Clássico Brasa</h3><p>Blend 180 g, cheddar, alface, tomate e molho da casa.</p><div class="row"><span class="pr">R$ 32</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+      <div class="card hot"><div class="em">🥓</div><h3>Bacon Supremo</h3><p>Blend 180 g, bacon crocante, cheddar duplo e cebola caramelizada.</p><div class="row"><span class="pr">R$ 38</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+      <div class="card"><div class="em">🌶️</div><h3>Picante do Chef</h3><p>Blend 180 g, pepper jack, jalapeño e maionese de chipotle.</p><div class="row"><span class="pr">R$ 36</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+      <div class="card"><div class="em">🧀</div><h3>Duplo Cheddar</h3><p>Dois blends de 120 g e muito cheddar cremoso.</p><div class="row"><span class="pr">R$ 42</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+      <div class="card"><div class="em">🥗</div><h3>Veggie da Horta</h3><p>Burger de grão-de-bico, rúcula, tomate seco e maionese verde.</p><div class="row"><span class="pr">R$ 34</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+      <div class="card"><div class="em">🥤</div><h3>Milkshakes</h3><p>Chocolate, morango ou Ovomaltine. 400 ml.</p><div class="row"><span class="pr">R$ 19</span><a class="add" href="https://wa.me/5500000000000" target="_blank" rel="noopener">+ Pedir</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="combo" id="combo">
+  <div class="wrap">
+    <div>
+      <h2>Combo <span>da semana</span></h2>
+      <p>2 Bacon Supremo + batata grande + 2 refrigerantes. Perfeito para dividir (ou não).</p>
+      <span class="price">R$ 79,90 <s>R$ 98</s></span>
+      <a class="btn btn-y" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Quero o combo</a>
+    </div>
+    <div class="big" aria-hidden="true">🍔🍟</div>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <div class="info">
+      <div><div class="ic">📍</div><h3>Endereço</h3><p>Rua do Sabor, 789 · Centro</p></div>
+      <div><div class="ic">🕒</div><h3>Horário</h3><p>Ter a Dom · 18h às 23h30</p></div>
+      <div><div class="ic">🛵</div><h3>Delivery</h3><p>Taxa grátis num raio de 3 km</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Brasa Burger · Hamburgueria Artesanal · Todos os direitos reservados</footer>
+<a class="wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script src="../shared/demo.js"></script>
+</body>
+</html>

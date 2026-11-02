@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Apresentação — Sites para Comércio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script>
+  // ===== EDITE AQUI e rode: node vitrine/apresentacao/gerar-pdf.cjs =====
+  // Campos vazios ("") são escondidos automaticamente no PDF.
+  window.CONFIG = {
+    cliente: "",          // ex.: "Padaria do João" -> aparece na capa como "Proposta para ..."
+    seuNome: "",          // ex.: "Maria Silva — Criação de Sites"
+    whatsapp: "",         // ex.: "(11) 99999-9999"
+    email: "",            // ex.: "contato@seusite.com"
+    linkVitrine: "",      // ex.: "https://minha-vitrine.netlify.app"
+    preco: "",            // ex.: "R$ 497" (ou deixe vazio)
+    precoDetalhe: ""      // ex.: "pagamento único · ou 3x de R$ 165,67"
+  };
+</script>
+<style>
+  @page{size:A4 landscape;margin:0}
+  :root{--ink:#16161a;--muted:#6b6a72;--brand:#4f46e5;--soft:#eef0ff;--bg:#f6f5f2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:297mm;height:210mm;padding:16mm 18mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .page:last-child{page-break-after:auto}
+  .num{position:absolute;bottom:9mm;right:18mm;font-size:9pt;color:#aaa}
+  h1{font-size:40pt;line-height:1.05;letter-spacing:-.02em}
+  h2{font-size:26pt;line-height:1.1;letter-spacing:-.01em;margin-bottom:6mm}
+  .k{display:inline-block;background:var(--soft);color:var(--brand);font-weight:800;font-size:9pt;padding:2mm 4mm;border-radius:99px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6mm}
+  /* capa */
+  .cover{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:12mm;align-items:center}
+  .cover h1 span{color:#a5a0ff}
+  .cover p{color:#c4c3cc;font-size:13pt;margin-top:6mm;max-width:120mm}
+  .cover .for{margin-top:10mm;font-size:12pt;color:#fff;border-left:3px solid var(--brand);padding-left:4mm}
+  .cover .for small{display:block;color:#9998a3;font-size:9pt;text-transform:uppercase;letter-spacing:.1em}
+  .stack{position:relative;height:150mm}
+  .stack img{position:absolute;width:105mm;border-radius:3mm;box-shadow:0 8mm 20mm rgba(0,0,0,.5)}
+  .stack img:nth-child(1){top:0;left:0;transform:rotate(-4deg)}
+  .stack img:nth-child(2){top:22mm;left:22mm;transform:rotate(2deg)}
+  .stack img:nth-child(3){top:48mm;left:6mm;transform:rotate(-1deg)}
+  .stack img:nth-child(4){top:72mm;left:30mm;transform:rotate(3deg)}
+  /* incluso */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:4mm}
+  .feat{background:var(--bg);border-radius:4mm;padding:7mm}
+  .feat .ic{font-size:20pt}
+  .feat h3{font-size:13pt;margin:3mm 0 1.5mm}
+  .feat p{color:var(--muted);font-size:10pt;line-height:1.5}
+  /* modelos */
+  .model{display:grid;grid-template-columns:1fr 62mm;gap:10mm;height:100%}
+  .model .head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:end}
+  .model .head h2{margin:0}
+  .model .head p{color:var(--muted);font-size:11pt;max-width:120mm;text-align:right}
+  .browser{border-radius:3mm;overflow:hidden;box-shadow:0 3mm 12mm rgba(0,0,0,.15);border:1px solid #e3e3e8;align-self:start}
+  .browser .bar{height:7mm;background:#ececf0;display:flex;gap:1.6mm;align-items:center;padding:0 3mm}
+  .browser .bar i{width:2.4mm;height:2.4mm;border-radius:50%;background:#cfcfd6}
+  .browser img{display:block;width:100%}
+  .phone{border:2.4mm solid #16161a;border-radius:7mm;overflow:hidden;align-self:start;box-shadow:0 3mm 12mm rgba(0,0,0,.2);height:125mm}
+  .phone img{display:block;width:100%}
+  .chips{grid-column:1/-1;display:flex;gap:3mm;flex-wrap:wrap;margin-top:-4mm}
+  .chips span{background:var(--bg);border-radius:99px;padding:1.6mm 4mm;font-size:9pt;font-weight:600}
+  /* processo */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm;margin-top:6mm}
+  .step{border:1px solid #e5e5ea;border-radius:4mm;padding:7mm}
+  .step b{display:inline-grid;place-items:center;width:10mm;height:10mm;border-radius:50%;background:var(--brand);color:#fff;margin-bottom:4mm}
+  .step h3{font-size:13pt;margin-bottom:2mm}
+  .step p{color:var(--muted);font-size:10pt;line-height:1.5}
+  .note{margin-top:10mm;background:var(--soft);border-radius:4mm;padding:6mm 8mm;font-size:11pt}
+  /* fechamento */
+  .close{background:var(--brand);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  .close h1{font-size:44pt}
+  .close p{font-size:14pt;opacity:.9;margin-top:5mm;max-width:190mm}
+  .price{margin-top:10mm;background:#fff;color:var(--ink);border-radius:5mm;padding:7mm 14mm}
+  .price b{display:block;font-size:30pt;color:var(--brand)}
+  .price small{color:var(--muted);font-size:10pt}
+  .contact{margin-top:10mm;display:flex;gap:6mm;flex-wrap:wrap;justify-content:center}
+  .contact div{background:rgba(255,255,255,.14);border-radius:99px;padding:3mm 7mm;font-weight:600;font-size:12pt}
+  .page.txt{display:flex;flex-direction:column;justify-content:center}
+  .page.txt .k{align-self:flex-start}
+  [data-hide]{display:none!important}
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div>
+    <span class="k" style="background:#2a2a35;color:#a5a0ff">Apresentação</span>
+    <h1>Sites profissionais que <span>trazem clientes</span> para o seu negócio.</h1>
+    <p>Modelos modernos, rápidos e prontos para o celular, personalizados com a identidade da sua marca e com contato direto pelo WhatsApp.</p>
+    <div class="for" id="for"><small>Proposta para</small><span id="cliente"></span></div>
+  </div>
+  <div class="stack">
+    <img src="../img/padaria-desktop.jpg" alt="">
+    <img src="../img/barbearia-desktop.jpg" alt="">
+    <img src="../img/loja-roupas-desktop.jpg" alt="">
+    <img src="../img/hamburgueria-desktop.jpg" alt="">
+  </div>
+</section>
+
+<section class="page txt">
+  <span class="k">O que você recebe</span>
+  <h2>Tudo o que o seu negócio precisa para aparecer bem na internet</h2>
+  <div class="feats">
+    <div class="feat"><div class="ic">📱</div><h3>Perfeito no celular</h3><p>A maioria dos seus clientes vai acessar pelo celular, e o site se adapta a qualquer tela.</p></div>
+    <div class="feat"><div class="ic">💬</div><h3>Botão de WhatsApp</h3><p>O cliente fala com você em um clique, para pedidos, encomendas ou agendamentos.</p></div>
+    <div class="feat"><div class="ic">🎨</div><h3>Com a cara da sua marca</h3><p>Suas cores, seu logo, suas fotos e seus textos. Nada de site genérico.</p></div>
+    <div class="feat"><div class="ic">⚡</div><h3>Rápido e leve</h3><p>Carrega em segundos, mesmo com internet fraca. Ninguém desiste esperando.</p></div>
+    <div class="feat"><div class="ic">🔎</div><h3>Pronto para o Google</h3><p>Estrutura otimizada para o seu negócio ser encontrado nas buscas.</p></div>
+    <div class="feat"><div class="ic">🌐</div><h3>Publicado e no ar</h3><p>Entregamos o site funcionando, com o seu domínio (ex.: www.seunegocio.com.br).</p></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="model">
+    <div class="head"><div><span class="k">Modelo 1</span><h2>Padaria &amp; Confeitaria</h2></div><p>Visual acolhedor para padarias, cafés, docerias e confeitarias. Destaque para o cardápio e as encomendas.</p></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="../img/padaria-desktop.jpg" alt=""></div>
+    <div class="phone"><img src="../img/padaria-mobile.jpg" alt=""></div>
+    <div class="chips"><span>Cardápio com preços</span><span>Encomendas pelo WhatsApp</span><span>Depoimentos</span><span>Horários e endereço</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="model">
+    <div class="head"><div><span class="k">Modelo 2</span><h2>Barbearia &amp; Salão</h2></div><p>Estilo marcante e sofisticado para barbearias, salões e estúdios de beleza. Foco em agendamento.</p></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="../img/barbearia-desktop.jpg" alt=""></div>
+    <div class="phone"><img src="../img/barbearia-mobile.jpg" alt=""></div>
+    <div class="chips"><span>Tabela de serviços</span><span>Equipe</span><span>Agendamento pelo WhatsApp</span><span>Planos mensais</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="model">
+    <div class="head"><div><span class="k">Modelo 3</span><h2>Loja de Roupas</h2></div><p>Elegante e minimalista para lojas de roupas, calçados e acessórios. A vitrine valoriza os produtos.</p></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="../img/loja-roupas-desktop.jpg" alt=""></div>
+    <div class="phone"><img src="../img/loja-roupas-mobile.jpg" alt=""></div>
+    <div class="chips"><span>Vitrine de produtos</span><span>Categorias</span><span>Cupom de desconto</span><span>Cadastro de e-mail</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="model">
+    <div class="head"><div><span class="k">Modelo 4</span><h2>Hamburgueria &amp; Delivery</h2></div><p>Chamativo e cheio de energia para hamburguerias, pizzarias, lanchonetes e restaurantes com delivery.</p></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="../img/hamburgueria-desktop.jpg" alt=""></div>
+    <div class="phone"><img src="../img/hamburgueria-mobile.jpg" alt=""></div>
+    <div class="chips"><span>Cardápio com pedido direto</span><span>Promoção da semana</span><span>Área de entrega</span><span>Horário de funcionamento</span></div>
+  </div>
+</section>
+
+<section class="page txt">
+  <span class="k">Como funciona</span>
+  <h2>Do primeiro contato ao site no ar, sem complicação</h2>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Escolha o modelo</h3><p>Você escolhe o modelo que mais combina com o seu negócio.</p></div>
+    <div class="step"><b>2</b><h3>Envie suas informações</h3><p>Logo, fotos, textos, produtos, preços e o seu WhatsApp.</p></div>
+    <div class="step"><b>3</b><h3>Personalização</h3><p>Ajustamos cores, fontes e conteúdo com a identidade da sua marca. Você aprova antes de publicar.</p></div>
+    <div class="step"><b>4</b><h3>Site no ar</h3><p>Publicamos com o seu domínio e entregamos tudo funcionando.</p></div>
+  </div>
+  <div class="note" id="vitrine">👉 Veja os modelos funcionando: <b id="linkVitrine"></b></div>
+</section>
+
+<section class="page close">
+  <h1>Vamos colocar o seu negócio na internet?</h1>
+  <p>Escolha o seu modelo e, em poucos dias, você terá um site profissional trabalhando por você 24 horas por dia.</p>
+  <div class="price" id="price"><small>Investimento</small><b id="preco"></b><small id="precoDetalhe"></small></div>
+  <div class="contact" id="contact">
+    <div id="seuNome"></div>
+    <div id="whatsapp"></div>
+    <div id="email"></div>
+  </div>
+</section>
+
+<script>
+  const c = window.CONFIG;
+  const set = (id, val, prefix = '') => { const el = document.getElementById(id); if (val) el.textContent = prefix + val; else el.setAttribute('data-hide', ''); };
+  set('cliente', c.cliente);
+  if (!c.cliente) document.getElementById('for').setAttribute('data-hide', '');
+  set('linkVitrine', c.linkVitrine);
+  if (!c.linkVitrine) document.getElementById('vitrine').setAttribute('data-hide', '');
+  set('preco', c.preco);
+  set('precoDetalhe', c.precoDetalhe);
+  if (!c.preco) document.getElementById('price').setAttribute('data-hide', '');
+  set('seuNome', c.seuNome);
+  set('whatsapp', c.whatsapp, '💬 ');
+  set('email', c.email, '✉️ ');
+  if (!c.seuNome && !c.whatsapp && !c.email) document.getElementById('contact').setAttribute('data-hide', '');
+  document.querySelectorAll('.page').forEach((p, i) => { if (i) { const n = document.createElement('div'); n.className = 'num'; n.textContent = i + 1; p.appendChild(n); } });
+</script>
+</body>
+</html>
