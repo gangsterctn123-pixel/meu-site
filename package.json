@@ -10,22 +10,27 @@
     "preview": "vite preview",
     "video:studio": "remotion studio",
     "video:render": "remotion render CogumeloLiliputiano out/cogumelo.mp4",
-    "video:photos": "node scripts/pexels-download.mjs"
+    "video:photos": "node scripts/pexels-download.mjs",
+    "video:render:motor": "remotion render MotorReels out/motor-reels.mp4 --gl=swangle"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@react-three/fiber": "^9.8.2",
     "@remotion/cli": "4.0.540",
     "@remotion/fonts": "4.0.540",
     "@remotion/player": "4.0.540",
+    "@remotion/three": "4.0.540",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "remotion": "4.0.540"
+    "remotion": "4.0.540",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "@types/three": "^0.180.0",
     "@vitejs/plugin-react": "^6.1.0",
     "oxlint": "^1.79.0",
     "tailwindcss": "^4.3.3",
