@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Estúdio de vídeo (reinstalável com: bash estudio/instalar-estudio.sh)
+.claude/settings.local.json
+ferramentas/*
+!ferramentas/README.md
+.claude/skills/color-grade/
+.claude/skills/video-shotcraft/
+.claude/skills/**/.venv/
+.claude/skills/**/node_modules/
+.claude/skills/**/__pycache__/
+estudio/**/.hyperframes/
+.claude/skills/**/.env
+.env
+.claude/skills/claude-watch/tests/fixtures/*.mp4

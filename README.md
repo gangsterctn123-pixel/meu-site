@@ -56,3 +56,8 @@ componentes visuais (`FichaMock`, `BonusVisual`, cards de depoimento em HTML/CSS
 preservam a composição, proporção e paleta de cada seção. Para 100% de fidelidade
 fotográfica, substitua esses componentes pelas imagens reais em `src/components/` e
 `src/data/content.ts`.
+
+## Estúdio de vídeo
+
+Este repositório também é configurado como estúdio de produção de vídeo para o Claude Code
+(plugins, skills e ferramentas). Veja [ESTUDIO.md](ESTUDIO.md).
